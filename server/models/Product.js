@@ -14,14 +14,28 @@ const productSchema = new Schema(
       type: Number,
       required: true,
       minlength: 5
-    }
+    },
+
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment'
+      }
+    ]
   },
   {
     toJSON: {
-      virtuals: true
+      virtuals: true,
+      getters: true
     }
   }
 );
+
+
+
+productSchema.virtual('commentCount').get(function() {
+  return this.comments.length;
+});
 
 
 
