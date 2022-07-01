@@ -10,7 +10,7 @@ const product = {
 export default function display(){
     return(
         <div>
-            <Card name={product.name} price={procudt.price}/>
+            <Card name={product.name} price={product.price}/>
         </div>
     )
 }
