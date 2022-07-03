@@ -1,38 +1,92 @@
-.App {
+.Login-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.Login-img-size {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 50vw;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Login-img-size #logo {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 64px;
+  transform: rotate(-8.82deg);
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Login-img-size #slogan {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 42px;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-background {
+  background-color: var(--third-color);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: var(--background-padding);
+}
+
+.flex-display {
+  height: 150px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btn-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+  margin: auto;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+#btn-login {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#btn-login:hover {
+  background-color: #a84d10;
 }
+
+#btn-signup {
+  background-color: var(--fifth-color);
+  color: #fff;
+  transition: 0.1s ease-in;
+}
+
+#btn-signup:hover {
+  background-color: #035fc9;
+  color: #fff;
+}
+
+.text-container {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 20% auto;
+}
+
+/* .Login-img {
+  height: 100%;
+  width: auto;
+} */
