@@ -10,7 +10,7 @@ export default function Card(props){
           <div className="card" style={cardStyle}>
             <img
               className="card-img-top"
-              //src={require(`${props.src}`)}
+              src={require(`${props.src}`)}
               alt="Card cap"
             />
             <div className="card-body">

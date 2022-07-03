@@ -6,7 +6,7 @@ import Image from '../assets/images/blueberry.jpg'
 const product = {
     name:'Banana',
     price:'$2.99',
-    //src: '../assets/images/blueberry.jpg'
+    src: '../assets/images/blueberry.jpg'
 }
 
 export default function display(){
