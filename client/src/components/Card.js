@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function Card(props){
     const cardStyle = {
         width:'15rem',
@@ -9,7 +10,7 @@ export default function Card(props){
           <div className="card" style={cardStyle}>
             <img
               className="card-img-top"
-              src={``}
+              //src={require(`${props.src}`)}
               alt="Card cap"
             />
             <div className="card-body">

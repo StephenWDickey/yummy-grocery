@@ -1,11 +1,21 @@
 import React from "react";
-import Display from "./components/Display";
-import Navbar from "./navigation/Navbar";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-  <Display />
-  )
+    <>
+    <div>
+      <Header />
+    
+      <div>
+        <Home />
+      </div>
+      <Footer />
+    </div>
+    </>
+  );
 }
 
 export default App;
