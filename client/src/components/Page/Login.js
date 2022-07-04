@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../App.css";
 import "../../styles/form.css";
 import Pineapples from "../images/Pineapple.png";
@@ -55,7 +56,9 @@ function Login() {
         </form>
         <div className="btn-flex ">
           <button id="btn-login">Login</button>
-          <button id="btn-signup">Sign Up</button>
+          <Link to="/signup" style={{ width: "100%" }}>
+            <button id="btn-signup">Sign Up</button>
+          </Link>
         </div>
       </div>
     </div>

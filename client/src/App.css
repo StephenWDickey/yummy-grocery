@@ -1,3 +1,36 @@
+/* Universal CSS Styles */
+
+.white-divider {
+  border-radius: 5px;
+  border: #fff 1px solid;
+  width: 100%;
+}
+
+.black-divider {
+  border-radius: 5px;
+  border: #000 1px solid;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  width: 80%;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.text-container {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto 20% auto;
+}
+
+/* Login Page */
+
 .Login-flex {
   display: flex;
   flex-direction: row;
@@ -21,14 +54,14 @@
   flex-direction: column;
 }
 
-.Login-img-size #logo {
+#logo {
   font-family: "Mr Dafoe", cursive;
   font-size: 64px;
   transform: rotate(-8.82deg);
   font-weight: 500;
 }
 
-.Login-img-size #slogan {
+#slogan {
   font-family: "Mr Dafoe", cursive;
   font-size: 42px;
   font-weight: 500;
@@ -80,10 +113,49 @@
   color: #fff;
 }
 
-.text-container {
-  width: 80%;
-  max-width: 500px;
-  margin: 0 auto 20% auto;
+/* Cart Page CSS */
+.cart-summary {
+  background-color: var(--third-color);
+  max-width: 425px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  box-shadow: -4px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  padding-bottom: 1rem;
+}
+
+.cart-summary h3 {
+  margin: 0;
+  font-weight: 400;
+  background-color: var(--primary-color);
+  padding: 1.5rem 1rem;
+}
+
+.cart-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cart-items {
+  padding: 0rem 8rem;
+  width: 75%;
+  max-width: 1100px;
+}
+
+.cart-items h2 {
+  margin: 0 auto 3rem auto;
+}
+
+#checkout {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
+}
+
+#checkout:hover {
+  background-color: #a84d10;
 }
 
 /* .Login-img {
