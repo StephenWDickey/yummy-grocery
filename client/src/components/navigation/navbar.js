@@ -17,6 +17,11 @@ function Nav() {
             </Link>
           </li>
           <li className="mx-1">
+            <Link to="/cart" style={{ textDecoration: 'none' }}>
+              Proceed to checkout!
+            </Link>
+          </li>
+          <li className="mx-1">
             <a href="/" onClick={() => Auth.logout()}  style={{ textDecoration: 'none' }}>
               Logout
             </a>
@@ -49,13 +54,10 @@ function Nav() {
         </Link>
       </h1>
       {/* <SearchBar placeholder="Search..." data={ShoeData} /> */}
-    <div className="headerLinks">
-      <nav>
-        {showNavigation()}
-      </nav>
-        <Link to = '/cart'>
-          CART
-        </Link>
+      <div className="headerLinks">
+        <nav>
+          {showNavigation()}
+        </nav>
       </div>
     </header>
   );
