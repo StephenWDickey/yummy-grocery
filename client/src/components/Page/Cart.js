@@ -1,13 +1,18 @@
 import React from "react";
 import Card from "../Card";
-
+import { useQuery } from '@apollo/client';
+import { QUERY_CURRENT_ORDER } from '../../utils/queries';
 const product = {
   name: "Banana",
   price: "$2.99",
   // src: '../assets/images/blueberry.jpg'
 };
 
-function Cart() {
+const Cart = () => {
+  const { loading, data } = useQuery(QUERY_CURRENT_ORDER, {
+    variables: { id: "62c289f31d0aed0a2bb75c78" },
+  });
+  const cart_items = data?.order.products || [];
   return (
     <>
       <div>
@@ -39,10 +44,9 @@ function Cart() {
         <div className="cart-items">
           <h2 style={{ textAlign: "center" }}>Items In Cart</h2>
           <section className="cart-flex">
-            <Card name={product.name} price={product.price} />
-            <Card name={product.name} price={product.price} />
-            <Card name={product.name} price={product.price} />
-            <Card name={product.name} price={product.price} />
+            {cart_items && cart_items.map(product => (
+                <Card name={product.name} price={product.price} />
+            ))}
           </section>
         </div>
       </div>
