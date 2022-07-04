@@ -15,80 +15,80 @@ db.once('open', async () => {
     await db.collection('Product').insertMany([
         {
             name: 'Eggs - Cargo Free, 18 Each',
-            price: 5.00/ea
+            price: 5.00
         },
         {
-            name: 'Milk - Far free, 0.5 Gallon',
-            price: 5.00/ea
+            name: 'Milk - Fat free, 0.5 Gallon',
+            price: 5.00
         },
         {
             name: 'Fresh Blueberries',
-            price: 3.00/lb
+            price: 3.00
         },
         {
             name:'Organic Bananas',
-            price:1.29/lb
+            price:1.29
         },
         {
             name:'Fresh Mango, 1 Each',
-            price:0.9/ea,
-            was:1.59/ea
+            price:0.9
+            
         },
         {
             name:'Fresh Kiwifruit, 1 Each',
-            price:1.29/ea
+            price:1.29
         },
         {
-            name:'Large Pineaaple, 1 Each',
-            price:2.49/ea,
-            was:2.99/ea
+            name:'Large Pineaple, 1 Each',
+            price:2.49
+        
         },
         {
             name:'Tomatoes',
-            price:1.99/lb
+            price:1.99
         },
         {
-            name:'Patatoes',
-            price:1.99/lb
+            name:'Potatoes',
+            price:1.99
         },
         {
-            name:'Organic Giner',
-            price:1.49/lb
+            name:'Organic Ginger',
+            price:1.49
         },
         {
-            name:'Organic Scallons, 1 Each',
-            price:1.49/ea
+            name:'Organic Scallions, 1 Each',
+            price:1.49
         },
         {
-            name:'Yourt',
-            price:1.49/ea
+            name:'Yogurt',
+            price:1.49
         },
         {
-            name:'Bakey Bread, 20 Ounce',
-            price:2.49/ea,
-            was:3.99/ea
+            name:'Bakery Bread, 20 Ounce',
+            price:2.49
+            
         },
         {
             name:'Butter Croissants, 4ct',
-            price:5.99/ea
+            price:5.99
         },
         {
             name:'Fresh Salmon, 1 Pound',
-            price:13.99/lb
+            price:13.99
         },
         {
             name:'Tiger Shrimp',
-            price:8.99/lb
+            price:8.99
         },
         {
             name:'Chicken Breasts, 5 Pound',
-            price:13.99/ea
+            price:13.99
         },{
             name:'Chicken Wings, 2.3 Pound',
-            price:8.59/ea
+            price:8.59
         },{
             name:'New York Strip Steak, 1.4 Pound',
-            price:20.99/ea
+            price:20.99
         },
         
         
@@ -113,15 +113,11 @@ db.once('open', async () => {
 
     await db.collection('products').insertMany([
         {
-            name: 'Milk',
-            price: 5.00,
+            name: 'Potatoes',
+            price: 3.98,
             quantity: 2
         },
-        {
-            name: 'Eggs',
-            price: 5.00,
-            quantity: 3
-        }
+        
     ], console.log('Product Orders seeded!'));
 
 
