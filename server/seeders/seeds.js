@@ -26,68 +26,68 @@ db.once('open', async () => {
             price: 3.00/lb
         },
         {
-            name:"Organic Bananas",
+            name:'Organic Bananas',
             price:1.29/lb
         },
         {
-            name:"Fresh Mango, 1 Each",
+            name:'Fresh Mango, 1 Each',
             price:0.9/ea,
             was:1.59/ea
         },
         {
-            name:"Fresh Kiwifruit, 1 Each",
+            name:'Fresh Kiwifruit, 1 Each',
             price:1.29/ea
         },
         {
-            name:"Large Pineaaple, 1 Each",
+            name:'Large Pineaaple, 1 Each',
             price:2.49/ea,
             was:2.99/ea
         },
         {
-            name:"Tomatoes",
+            name:'Tomatoes',
             price:1.99/lb
         },
         {
-            name:"Patatoes",
+            name:'Patatoes',
             price:1.99/lb
         },
         {
-            name:"Organic Giner",
+            name:'Organic Giner',
             price:1.49/lb
         },
         {
-            name:"Organic Scallons, 1 Each",
+            name:'Organic Scallons, 1 Each',
             price:1.49/ea
         },
         {
-            name:"Yourt",
+            name:'Yourt',
             price:1.49/ea
         },
         {
-            name:"Bakey Bread, 20 Ounce",
+            name:'Bakey Bread, 20 Ounce',
             price:2.49/ea,
             was:3.99/ea
         },
         {
-            name:"Butter Croissants, 4ct",
+            name:'Butter Croissants, 4ct',
             price:5.99/ea
         },
         {
-            name:"Fresh Salmon, 1 Pound",
+            name:'Fresh Salmon, 1 Pound',
             price:13.99/lb
         },
         {
-            name:"Tiger Shrimp",
+            name:'Tiger Shrimp',
             price:8.99/lb
         },
         {
-            name:"Chicken Breasts, 5 Pound",
+            name:'Chicken Breasts, 5 Pound',
             price:13.99/ea
         },{
-            name:"Chicken Wings, 2.3 Pound",
+            name:'Chicken Wings, 2.3 Pound',
             price:8.59/ea
         },{
-            name:"New York Strip Steak, 1.4 Pound",
+            name:'New York Strip Steak, 1.4 Pound',
             price:20.99/ea
         },
         
