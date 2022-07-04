@@ -22,19 +22,12 @@ const typeDefs = gql`
         _id: ID
         name: String
         price: Float
-        comments: [Comment]
     }
 
     type Comment {
         _id: ID
         commentText: String
         createdAt: String
-    }
-
-    type ProductOrder {
-        name: String
-        quantity: Int
-        price: Float
     }
 
     type Order {
@@ -45,10 +38,30 @@ const typeDefs = gql`
         createdAt: String
     }
 
+    type ProductOrder {
+        productName: String 
+        price: Float
+        quantity: Int
+    }
+
     type Mutation {
         addProductOrder(orderId: ID!, name: String!, quantity: Int!, price: Float!): Order
         createOrder(address: String!, total: Int!): Order
     }
+
+
+    type Auth {
+        token: ID!
+        user: User
+    }
+
+    
+    type Mutation {
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+    }
+
+    
 `;
 
 

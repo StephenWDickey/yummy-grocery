@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const {User, Order, Product} = require ('../models');
+const {User, Order, Product } = require ('../models');
 
 const resolvers = {
     Query: {
@@ -8,33 +8,63 @@ const resolvers = {
         return 'Hello world!';
       },
       users: async () => {
-        return User.find();
+        
+        const userData = await User.find();
+
+        return userData;
+        
+      },
+      product: async () => {
+        const productData = await Product.find();
+
+        return productData;
+        
       },
       orders: async ()=> {
         return Order.find();
       },
       order: async (parent, { _id }) => {
         return Order.findOne({ _id });
-      },
-      product: async (parent, args) => {
-        return Product.find();
       }
+      
     },
     Mutation: {
       createOrder: async (parent, args) => {
         const order = await Order.create(args);  
         return order;
       },
-      addProductOrder: async (parent, {orderId, name, quantity, price }) => {
+      addProductOrder: async (parent, {orderId, productName, quantity, price }) => {
         const currentOrder = await Order.findOne({_id: orderId});
         var newTotal = parseInt(currentOrder.total) + price;
         const updatedOrder = await Order.findOneAndUpdate(
           { _id: orderId },
-          { $set: {total: newTotal}, $push: { products: { name: name, quantity: quantity, price: price } } },
+          { $set: {total: newTotal}, $push: { products: { name: productName, quantity: quantity, price: price } } },
           { new: true, runValidators: true }
         );
         updatedOrder.total = newTotal;
         return updatedOrder;
+      },
+      addUser: async (parent, args) => {
+        const user = await User.create(args);
+        const token = signToken(user);
+      
+        return { token, user };
+      },
+      login: async (parent, { email, password }) => {
+        const user = await User.findOne({ email });
+      
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+      
+        const correctPw = await user.isCorrectPassword(password);
+      
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+      
+        const token = signToken(user);
+        return { token, user };
       }
     }
   };

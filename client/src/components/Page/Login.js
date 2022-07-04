@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import "../../styles/form.css";
-import Pineapples from "../images/Pineapple.png";
+// import Pineapples from "../images/Pineapple.png";
 
 function Login() {
   return (

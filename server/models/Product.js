@@ -23,19 +23,19 @@ const productSchema = new Schema(
     //   }
     // ]
   },
-  {
-    toJSON: {
-      virtuals: true,
-      getters: true
-    }
-  }
+  // {
+  //   toJSON: {
+  //     virtuals: true,
+  //     getters: true
+  //   }
+  // }
 );
 
 
 
-productSchema.virtual('commentCount').get(function() {
-  return this.comments.length;
-});
+// productSchema.virtual('commentCount').get(function() {
+//   return this.comments.length;
+// });
 
 
 

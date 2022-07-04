@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
 
-const Product = require ('../models');
-
-
 const db = require('../config/connection');
 
 
@@ -12,7 +9,7 @@ db.once('open', async () => {
 
 
 
-    await db.collection('Product').insertMany([
+    db.collection('product').insertMany([
         {
             name: 'Eggs - Cargo Free, 18 Each',
             price: 5.00
@@ -83,10 +80,12 @@ db.once('open', async () => {
         {
             name:'Chicken Breasts, 5 Pound',
             price:13.99
-        },{
+        },
+        {
             name:'Chicken Wings, 2.3 Pound',
             price:8.59
-        },{
+        },
+        {
             name:'New York Strip Steak, 1.4 Pound',
             price:20.99
         },
@@ -95,7 +94,7 @@ db.once('open', async () => {
     ], console.log('Products seeded!'));
 
 
-    await db.collection('User').insertMany([
+    db.collection('users').insertMany([
         {
             username: 'Test Testerson',
             email: "test@test.com"
@@ -111,17 +110,8 @@ db.once('open', async () => {
     ], console.log('Users seeded!'));
 
 
-    await db.collection('products').insertMany([
-        {
-            name: 'Potatoes',
-            price: 3.98,
-            quantity: 2
-        },
-        
-    ], console.log('Product Orders seeded!'));
 
-
-    db.close();
+    
     
 });
 

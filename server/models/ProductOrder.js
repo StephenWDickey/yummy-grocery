@@ -1,8 +1,8 @@
-const { Schema } = require('mongoose');
+const { Schema} = require('mongoose');
 
 const productOrderSchema = new Schema(
   {
-    name: {
+    productName: {
       type: String,
       required: true,
       maxlength: 280
@@ -21,5 +21,7 @@ const productOrderSchema = new Schema(
     }
   }
 );
+
+
 
 module.exports = productOrderSchema;

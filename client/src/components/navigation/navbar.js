@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import { Route, Link }  from 'react-router-dom';
-import Cart from "../Cart";
+import { Link }  from 'react-router-dom';
+import Cart from "../Page/Cart";
 // import SearchBar from "../SearchBar/SearchBar";
 // import ShoeData from "../../Data.json";
 
@@ -45,7 +45,7 @@ function Nav() {
     <header className="headerNav px-1">
       <h1>
         <Link to="/" style={{ textDecoration: 'none' }}>
-            Yummy
+            Yummy Grocery
         </Link>
       </h1>
       {/* <SearchBar placeholder="Search..." data={ShoeData} /> */}
@@ -53,7 +53,9 @@ function Nav() {
       <nav>
         {showNavigation()}
       </nav>
-      <Cart />
+        <Link to = '/cart'>
+          CART
+        </Link>
       </div>
     </header>
   );
