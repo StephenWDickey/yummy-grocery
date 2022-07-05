@@ -21,6 +21,7 @@
   width: 80%;
   max-width: 1600px;
   margin: auto;
+  padding: 2rem 0;
 }
 
 .text-container {
@@ -158,7 +159,47 @@
   background-color: #a84d10;
 }
 
-/* .Login-img {
-  height: 100%;
-  width: auto;
-} */
+/* Navigation Bar CSS */
+
+.NavBar {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+  align-items: baseline;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+}
+
+.NavBar h1 {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 48px;
+  transform: rotate(-8.82deg);
+  font-weight: 500;
+  margin: 0;
+}
+
+.NavBar #slogan {
+  margin: 0;
+  font-size: 34px;
+}
+
+.NavBar a {
+  color: #fff;
+}
+
+/* Footer CSS */
+
+footer #logo {
+  margin: 0 auto;
+  font-size: 36px;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.logo-div {
+  width: 100%;
+  margin: auto;
+}
