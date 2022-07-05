@@ -6,7 +6,7 @@ import { QUERY_CURRENT_ORDER } from '../../utils/queries';
 
 const Cart = () => {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c289f31d0aed0a2bb75c78" },
+    variables: { id: "62c38e3ff5378518f35f210d" },
   });
   const cart_items = data?.order.products || [];
   return (
@@ -42,7 +42,7 @@ const Cart = () => {
           <h2 style={{ textAlign: "center" }}>Items In Cart</h2>
           <section className="cart-flex">
             {cart_items && cart_items.map(product => (
-                <Card name={product.name} price={product.price} />
+                <Card name={product.productName} price={product.price} />
             ))}
           </section>
         </div>

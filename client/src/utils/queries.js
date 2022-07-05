@@ -16,7 +16,7 @@ export const QUERY_CURRENT_ORDER = gql`
       _id
       address
       products {
-        name
+        productName
         quantity
         price
       }

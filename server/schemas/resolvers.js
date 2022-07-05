@@ -38,7 +38,7 @@ const resolvers = {
         var newTotal = parseInt(currentOrder.total) + price;
         const updatedOrder = await Order.findOneAndUpdate(
           { _id: orderId },
-          { $set: {total: newTotal}, $push: { products: { name: productName, quantity: quantity, price: price } } },
+          { $set: {total: newTotal}, $push: { products: { productName: productName, quantity: quantity, price: price } } },
           { new: true, runValidators: true }
         );
         updatedOrder.total = newTotal;

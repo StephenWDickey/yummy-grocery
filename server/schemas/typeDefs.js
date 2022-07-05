@@ -45,7 +45,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addProductOrder(orderId: ID!, name: String!, quantity: Int!, price: Float!): Order
+        addProductOrder(orderId: ID!, productName: String!, quantity: Int!, price: Float!): Order
         createOrder(address: String!, total: Int!): Order
     }
 
