@@ -9,7 +9,6 @@ const Footer = () => {
         <h4 id="logo" style={{ paddingBottom: "1.5rem" }}>
           Yummy!
         </h4>
-        <div className="white-divider" style={{ opacity: "0.5" }} />
       </div>
       <section className="container flex" style={{ width: "100%" }}>
         <div>
@@ -21,29 +20,29 @@ const Footer = () => {
             <p>Cart</p>
           </Link>
         </div>
-        <div>
+        <div className="flex-column">
           <h4>Work On By </h4>
-          <div>
-            <a href="https://github.com/StephenWDickey">
-              <BsGithub />
-              Stephen Dickey
-            </a>
-          </div>
-          <div>
-            <a href="https://github.com/drew990">
-              <BsGithub />
-              Andrew Banagas
-            </a>
-          </div>
-          <div>
-            <a href="https://github.com/GongTianchou">
-              <BsGithub />
-              Tianchou Gong
-            </a>
-          </div>
+
+          <a href="https://github.com/StephenWDickey">
+            {/* <BsGithub /> */}
+            Stephen Dickey
+          </a>
+
+          <a href="https://github.com/drew990">
+            {/* <BsGithub /> */}
+            Andrew Banagas
+          </a>
+
+          <a href="https://github.com/GongTianchou">
+            {/* <BsGithub /> */}
+            Tianchou Gong
+          </a>
         </div>
       </section>
-      <div className="container">&copy;2022 by Yummy Grocery Inc.</div>
+      <div className="white-divider" style={{ opacity: "0.5" }} />
+      <div className="container" style={{ textAlign: "center" }}>
+        &copy;2022 by Yummy Grocery Inc.
+      </div>
     </footer>
   );
 };

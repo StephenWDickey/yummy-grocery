@@ -17,6 +17,12 @@
   justify-content: space-around;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .container {
   width: 80%;
   max-width: 1600px;
@@ -77,10 +83,14 @@
 }
 
 .flex-display {
-  height: 150px;
+  /* height: 150px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.flex-display label {
+  margin: 0 auto 1rem auto;
 }
 
 .btn-flex {
@@ -88,7 +98,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 250px;
-  margin: auto;
+  /* margin: auto; */
   align-items: center;
   padding: 1rem 2rem;
 }
@@ -202,4 +212,8 @@ footer #logo {
 .logo-div {
   width: 100%;
   margin: auto;
+}
+
+.flex-column a {
+  margin-bottom: 1rem;
 }
