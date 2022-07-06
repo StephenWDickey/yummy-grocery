@@ -13,6 +13,9 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import Header from "./components/NavBar";
 import Footer from "./components/Footer";
+import Auth from "./utils/auth";
+
+
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
@@ -37,21 +40,35 @@ const client = new ApolloClient({
 });
 
 function App() {
+
+  const loggedIn = Auth.loggedIn();
+
+
   return (
-    <ApolloProvider client={client}>
-      <div>
-        <Header />
-        <div>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </ApolloProvider>
+  <div>
+    <>
+    {
+      !loggedIn ? (
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      ) : (
+        <ApolloProvider client={client}>
+          <div>
+            <Header />
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </div>
+            <Footer />
+          </div>
+        </ApolloProvider>
+      )}
+  </>
+</div>
   );
 }
 

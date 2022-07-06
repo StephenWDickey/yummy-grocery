@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
+
 
 const Display = () => {
   // use useQuery hook to make query request
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   const products = data?.product || [];
+
+  
   return (
     <main className="container" style={{ minHeight: "60vh" }}>
       {loading ? (

@@ -23,6 +23,9 @@ const { authMiddleware } = require('./utils/auth');
 const PORT = process.env.PORT || 3001;
 
 
+const app = express();
+
+
 // create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
   typeDefs,
@@ -31,35 +34,31 @@ const server = new ApolloServer({
   // we use our middleware to authenticate 
   // the token before our resolver gets it
   // authMiddleware seems to break graphQL server
-  // context: authMiddleware
+  context: authMiddleware
 });
-
-
-
-const app = express();
-
-
-
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   // integrate our Apollo server with the Express application as middleware
-  server.applyMiddleware({ app });
-
+  server.applyMiddleware({app});
 
   db.once('open', () => {
-      app.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-        // log where we can go to test our GQL API
-        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-      })
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      // log where we can go to test our GQL API
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    })
   })
 };
 
+
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
+
+
