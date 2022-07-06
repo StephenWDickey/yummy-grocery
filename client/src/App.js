@@ -45,30 +45,32 @@ function App() {
 
 
   return (
-  <div>
-    <>
-    {
-      !loggedIn ? (
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      ) : (
-        <ApolloProvider client={client}>
-          <div>
-            <Header />
-            <div>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/cart" element={<Cart />} />
-              </Routes>
-            </div>
-            <Footer />
-          </div>
-        </ApolloProvider>
-      )}
-  </>
-</div>
+    <ApolloProvider client={client}>
+      <div>
+        <>
+        {
+          !loggedIn ? (
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          ) : (
+            
+              <div>
+                <Header />
+                <div>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/cart" element={<Cart />} />
+                  </Routes>
+                </div>
+                <Footer />
+              </div>
+            
+          )}
+      </>
+    </div>
+  </ApolloProvider>
   );
 }
 
