@@ -341,34 +341,37 @@ footer #logo {
 
 .hero {
   height: 500px;
-  width: 80%;
+  width: 100%;
   margin-bottom: 25px;
-  background-image: url("./assets/images/fruits\ and\ vegetables.jpg");
+  background-image: url("./assets/images/fruits.jpg");
   background-size: cover;
   background-position: center;
 }
 
 #coolsign {
-  font-family: "Mr Dafoe", cursive;
-  font-size: 35px;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 50px;
   font-weight: 300;
 }
 
 #coolsign {
   display: inline-block;
   color:white;
-  font-size: 30px;
+  font-size: 50px;
   position: relative;
-  left:50%;
+  left:20%;
   top:50%;
  } 
 
 #shopbtn{
   position: relative;
-  left:50%;
+  left:20%;
   top:50%;
 }
 /* Card */
 
+.card {
+
+}
 
 
