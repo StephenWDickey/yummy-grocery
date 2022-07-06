@@ -1,6 +1,12 @@
 import React from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_TO_CART } from "../utils/mutations";
 
 export default function Card(props) {
+  const [addProduct, { error }] = useMutation(ADD_TO_CART);
+  const addToCart = async (event) => {
+    event.preventDefault();
+  };
   const cardStyle = {
     width: "15rem",
   };

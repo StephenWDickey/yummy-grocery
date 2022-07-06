@@ -20,7 +20,7 @@ const Cart = () => {
   const cart_items = data?.order.productOrders || [];
 
   // for lazyQuery
-  const [getCheckout, {data}] = useLazyQuery(QUERY_CHECKOUT);
+  const [getCheckout] = useLazyQuery(QUERY_CHECKOUT);
 
 
   function submitCheckout() {

@@ -5,12 +5,28 @@ import "../../styles/form.css";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import { CREATE_ORDER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 // import Pineapples from "../images/Pineapple.png";
 
 const Login = (props) => {
+  var haveOrder = false;
   const [login, { error }] = useMutation(LOGIN_USER);
+  const [createOrder] = useMutation(CREATE_ORDER);
+  const createNewOrder = async() => {
+    try {
+      const { data } = await createOrder({
+        variables: { address: " ", total: 0 },
+      });
+      console.log(data.createOrder._id);
+      localStorage.setItem("orderid", data.createOrder._id);
+    } catch (e) {
+      console.error(e);
+    }
+  };
   const [formState, setFormState] = useState({ email: "", password: "" });
+
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -23,14 +39,15 @@ const Login = (props) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    alert(formState);
+    if (localStorage.getItem("orderId") === null) {
+      createNewOrder();
+    }
     try {
       const { data } = await login({
         variables: { ...formState },
       });
 
       Auth.login(data.login.token);
-      alert(data);
     } catch (e) {
       console.error(e);
     }
