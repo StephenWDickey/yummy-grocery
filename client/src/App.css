@@ -336,3 +336,39 @@ footer #logo {
     transform: rotate(360deg);
   }
 }
+
+/* Home page */
+
+.hero {
+  height: 500px;
+  width: 80%;
+  margin-bottom: 25px;
+  background-image: url("./assets/images/fruits\ and\ vegetables.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#coolsign {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#coolsign {
+  display: inline-block;
+  color:white;
+  font-size: 30px;
+  position: relative;
+  left:50%;
+  top:50%;
+ } 
+
+#shopbtn{
+  position: relative;
+  left:50%;
+  top:50%;
+}
+/* Card */
+
+
+
