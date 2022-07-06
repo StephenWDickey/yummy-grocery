@@ -16,7 +16,7 @@ export default function Card(props) {
           <h5 className="card-title">Name: {props.name}</h5>
           <p className="card-text">Price: {props.price}</p>
           <a href="/" className="btn btn-primary">
-            Add to Cart {props.name}
+            Add to Cart
           </a>
         </div>
       </div>

@@ -15,6 +15,7 @@ const Display = () => {
           <div id="preloader"></div>
         </>
       ) : (
+        //picture
         <div>
           {/* src={product.src} */}
           {products &&
