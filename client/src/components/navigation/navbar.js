@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link }  from 'react-router-dom';
-import Cart from "../Page/Cart";
+// import Cart from "../Page/Cart";
 // import SearchBar from "../SearchBar/SearchBar";
 // import ShoeData from "../../Data.json";
 

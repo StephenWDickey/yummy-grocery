@@ -97,15 +97,18 @@ db.once('open', async () => {
     db.collection('users').insertMany([
         {
             username: 'Test Testerson',
-            email: "test@test.com"
+            email: "test@test.com",
+            password: "12345"
         },
         {
             username: 'Cody Coder',
-            email: "test2@test.com"
+            email: "test2@test.com",
+            password: "12345"
         },
         {
             username: 'Polly Programmer',
-            email: "test3@test.com"
+            email: "test3@test.com",
+            password: "12345"
         }
     ], console.log('Users seeded!'));
 
