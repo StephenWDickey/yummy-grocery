@@ -15,7 +15,14 @@ const Display = () => {
           <div id="preloader"></div>
         </>
       ) : (
-        //picture
+        <>
+        <div class="hero">
+          <h1 id="coolsign">Fresh Fruits Today!</h1>
+          <a id="shopbtn" href="/" className="btn btn-primary">
+            Shop Now
+          </a>
+        </div>
+        
         <div>
           {/* src={product.src} */}
           {products &&
@@ -23,7 +30,8 @@ const Display = () => {
               <Card name={product.name} price={product.price} />
             ))}
         </div>
-      )}
+       </>
+       )};
     </main>
   );
 };
