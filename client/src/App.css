@@ -36,6 +36,11 @@
   margin: 0 auto 20% auto;
 }
 
+.logo-container {
+  width: fit-content;
+  margin: auto;
+}
+
 /* Login Page */
 
 .Login-flex {
@@ -124,6 +129,20 @@
   color: #fff;
 }
 
+/* Sign-up Page */
+
+.signup {
+  background-color: var(--third-color);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.signup button {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
 /* Cart Page CSS */
 .cart-summary {
   background-color: var(--third-color);
@@ -200,6 +219,33 @@
   color: #fff;
 }
 
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  /* transition: 0.1s ease-in; */
+}
+
+.popup-inner {
+  background-color: rgba(256, 265, 256, 0.75);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #000;
+  max-width: 350px;
+  width: 100%;
+  pointer-events: auto;
+  /* margin: auto; */
+}
+
 /* Footer CSS */
 
 footer #logo {
@@ -216,4 +262,77 @@ footer #logo {
 
 .flex-column a {
   margin-bottom: 1rem;
+}
+
+/* Loading Screen */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#loader {
+  display: block;
+  position: relative;
+  /*left: 50%;
+   top: 50%; */
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--secondary-color);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--fifth-color);
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--third-color);
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

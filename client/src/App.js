@@ -1,5 +1,5 @@
 import React from "react";
-import Display from "./components/Display";
+import Home from "./components/Page/Home";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Page/Login";
 import Cart from "./components/Page/Cart";
@@ -44,7 +44,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Display />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>

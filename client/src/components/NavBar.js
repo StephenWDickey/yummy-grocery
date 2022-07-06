@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import Cart from "./Page/Cart";
-import { MdShoppingCart, MdAccountCircle } from "react-icons/md";
+import {
+  MdShoppingCart,
+  MdAccountCircle,
+  MdOutlineKeyboardBackspace,
+} from "react-icons/md";
 // import SearchBar from "../SearchBar/SearchBar";
 // import ShoeData from "../../Data.json";
+
+function Popup(props) {
+  return props.trigger ? (
+    <div className="popup">
+      <div className="popup-inner">
+        <MdOutlineKeyboardBackspace
+          size={"3em"}
+          onClick={() => props.setTrigger(false)}
+          style={{ cursor: "pointer" }}
+        />
+        {props.children}
+        <button>Logout</button>
+      </div>
+    </div>
+  ) : (
+    ""
+  );
+}
 
 function Nav() {
   function showNavigation() {
@@ -50,25 +72,56 @@ function Nav() {
     }
   }
 
+  // Profile Popup
+  const [open, setOpen] = useState(false);
+  // const [fade, setFade] = useState(false);
+
   return (
-    <header className="NavBar headerNav px-1">
-      <h1>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          Yummy!
-        </Link>
-      </h1>
-      <h2 id="slogan">We’ve Got You Coverd!</h2>
-      <div className="flex" style={{ width: "100px" }}>
-        <Link to="/cart">
-          <MdShoppingCart size={"2em"} />
-        </Link>
-        <MdAccountCircle size={"2em"} />
-      </div>
-      {/* <SearchBar placeholder="Search..." data={ShoeData} /> */}
-      {/* <div className="headerLinks">
+    <>
+      {Auth.loggedIn() ? (
+        <header className="NavBar headerNav px-1">
+          {Auth.loggedIn() ? (
+            <h1>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                Yummy!
+              </Link>
+            </h1>
+          ) : (
+            <h1>Yummy!</h1>
+          )}
+
+          <h2 id="slogan">We’ve Got You Coverd!</h2>
+          {Auth.loggedIn() ? (
+            <>
+              <div className="flex" style={{ width: "100px" }}>
+                <Link to="/cart">
+                  <MdShoppingCart size={"2em"} />
+                </Link>
+                <div id="open">
+                  <MdAccountCircle
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setOpen(true)}
+                    size={"2em"}
+                  />
+                </div>
+              </div>
+              <Popup trigger={open} setTrigger={setOpen}>
+                <h3>My popup</h3>
+              </Popup>
+            </>
+          ) : (
+            ""
+          )}
+
+          {/* <SearchBar placeholder="Search..." data={ShoeData} /> */}
+          {/* <div className="headerLinks">
         <nav>{showNavigation()}</nav>
       </div> */}
-    </header>
+        </header>
+      ) : (
+        ""
+      )}
+    </>
   );
 }
 
