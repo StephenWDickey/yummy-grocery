@@ -15,8 +15,9 @@ const resolvers = {
         
       },
       product: async () => {
+        
         const productData = await Product.find();
-
+        console.log (productData);
         return productData;
         
       },
@@ -38,7 +39,7 @@ const resolvers = {
         var newTotal = parseInt(currentOrder.total) + price;
         const updatedOrder = await Order.findOneAndUpdate(
           { _id: orderId },
-          { $set: {total: newTotal}, $push: { products: { productName: productName, quantity: quantity, price: price } } },
+          { $set: {total: newTotal}, $push: { productOrders: { productName: productName, quantity: quantity, price: price } } },
           { new: true, runValidators: true }
         );
         updatedOrder.total = newTotal;

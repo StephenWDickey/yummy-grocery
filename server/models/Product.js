@@ -23,12 +23,11 @@ const productSchema = new Schema(
     //   }
     // ]
   },
-  // {
-  //   toJSON: {
-  //     virtuals: true,
-  //     getters: true
-  //   }
-  // }
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
 );
 
 

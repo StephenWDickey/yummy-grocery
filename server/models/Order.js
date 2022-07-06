@@ -6,7 +6,7 @@ const productOrderSchema = require('./ProductOrder');
 
 const orderSchema = new Schema(
     {
-      products: [productOrderSchema],
+      productOrders: [productOrderSchema],
       address: {
           type: String,
           required: true,

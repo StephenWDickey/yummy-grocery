@@ -18,6 +18,7 @@ const typeDefs = gql`
         password: String
     }
 
+
     type Product {
         _id: ID
         name: String
@@ -32,7 +33,7 @@ const typeDefs = gql`
 
     type Order {
         _id: ID
-        products: [ProductOrder]
+        productOrders: [ProductOrder]
         address: String
         total: String
         createdAt: String

@@ -7,9 +7,10 @@ const db = require('../config/connection');
 db.once('open', async () => {
 
 
+    db.dropDatabase();
 
 
-    db.collection('product').insertMany([
+    db.collection('products').insertMany([
         {
             name: 'Eggs - Cargo Free, 18 Each',
             price: 5.00

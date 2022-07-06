@@ -7,7 +7,7 @@ const Cart = () => {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
     variables: { id: "62c38e3ff5378518f35f210d" },
   });
-  const cart_items = data?.order.products || [];
+  const cart_items = data?.order.productOrders || [];
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
