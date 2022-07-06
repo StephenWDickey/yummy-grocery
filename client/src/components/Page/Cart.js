@@ -3,11 +3,56 @@ import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_CURRENT_ORDER } from "../../utils/queries";
 
+// import useLazyQuery hook
+import { useLazyQuery } from '@apollo/client';
+
+
+import { QUERY_CHECKOUT } from '../../utils/queries'; 
+
+import { loadStripe } from '@stripe/stripe-js';
+
+import { useStoreContext } from '../../utils/GlobalState';
+
 const Cart = () => {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
     variables: { id: "62c38e3ff5378518f35f210d" },
   });
   const cart_items = data?.order.productOrders || [];
+
+  // for lazyQuery
+  const [getCheckout, {data}] = useLazyQuery(QUERY_CHECKOUT);
+
+
+  function submitCheckout() {
+    const productIds = [];
+
+    state.cart.forEach((item) => {
+      for (let i=0; i< item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+
+    getCheckout({
+      variables: { products: productIds }
+    });
+
+    // use useEffect hook to retrieve data from cache for cart
+    useEffect(() => {
+
+      async function getCart() {
+        const cart = await idbPromise('cart', 'get');
+        dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      };
+    
+      // if cart is empty we will check if cart data has been cached
+      // then getCart() function will retrieve it
+      if (!state.cart.length) {
+        getCart();
+      }
+    }, [state.cart.length, dispatch]);
+  }
+
+
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">

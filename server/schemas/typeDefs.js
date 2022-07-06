@@ -3,12 +3,19 @@ const { gql } = require('apollo-server-express');
 
 // create our typeDefs
 const typeDefs = gql`
+
+    type Checkout {
+        session: ID
+    }
+
+
     type Query {
         helloWorld: String
         users: [User]
         orders: [Order]
         order(_id: ID!): Order
         product: [Product]
+        checkout(products: [ID]!): Checkout
     }
 
     type User {
