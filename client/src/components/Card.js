@@ -1,7 +1,5 @@
 import React from "react";
 
-// className="container"
-
 export default function Card(props) {
   const cardStyle = {
     width: "15rem",

@@ -17,16 +17,28 @@
   justify-content: space-around;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .container {
   width: 80%;
   max-width: 1600px;
   margin: auto;
+  padding: 2rem 0;
 }
 
 .text-container {
   width: 80%;
   max-width: 500px;
   margin: 0 auto 20% auto;
+}
+
+.logo-container {
+  width: fit-content;
+  margin: auto;
 }
 
 /* Login Page */
@@ -76,10 +88,14 @@
 }
 
 .flex-display {
-  height: 150px;
+  /* height: 150px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.flex-display label {
+  margin: 0 auto 1rem auto;
 }
 
 .btn-flex {
@@ -87,7 +103,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 250px;
-  margin: auto;
+  /* margin: auto; */
   align-items: center;
   padding: 1rem 2rem;
 }
@@ -110,6 +126,20 @@
 
 #btn-signup:hover {
   background-color: #035fc9;
+  color: #fff;
+}
+
+/* Sign-up Page */
+
+.signup {
+  background-color: var(--third-color);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.signup button {
+  background-color: var(--secondary-color);
   color: #fff;
 }
 
@@ -158,7 +188,151 @@
   background-color: #a84d10;
 }
 
-/* .Login-img {
+/* Navigation Bar CSS */
+
+.NavBar {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+  align-items: baseline;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+}
+
+.NavBar h1 {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 48px;
+  transform: rotate(-8.82deg);
+  font-weight: 500;
+  margin: 0;
+}
+
+.NavBar #slogan {
+  margin: 0;
+  font-size: 34px;
+}
+
+.NavBar a {
+  color: #fff;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  /* transition: 0.1s ease-in; */
+}
+
+.popup-inner {
+  background-color: rgba(256, 265, 256, 0.75);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #000;
+  max-width: 350px;
+  width: 100%;
+  pointer-events: auto;
+  /* margin: auto; */
+}
+
+/* Footer CSS */
+
+footer #logo {
+  margin: 0 auto;
+  font-size: 36px;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.logo-div {
+  width: 100%;
+  margin: auto;
+}
+
+.flex-column a {
+  margin-bottom: 1rem;
+}
+
+/* Loading Screen */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
-} */
+}
+#loader {
+  display: block;
+  position: relative;
+  /*left: 50%;
+   top: 50%; */
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--secondary-color);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--fifth-color);
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--third-color);
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

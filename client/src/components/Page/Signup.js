@@ -3,12 +3,14 @@ import "../../App.css";
 
 function Signup() {
   return (
-    <>
-      <h1 id="logo">Yummy!</h1>
-      <h2 id="slogan">We’ve Got You Coverd!</h2>
-      <h2>Fill in the Details Below</h2>
-      <form className="flex-display">
-        <div>
+    <div className="signup">
+      <div className="container ">
+        {/* <div className="logo-container">
+          <h1 id="logo">Yummy!</h1>
+        </div>
+        <h2 id="slogan">We’ve Got You Coverd!</h2> */}
+        <h2>Fill in the Details Below</h2>
+        <form className="flex-display">
           <label className="field field_v1">
             <input
               // value={}
@@ -23,8 +25,7 @@ function Signup() {
               <span className="field__label">Email</span>
             </span>
           </label>
-        </div>
-        <div>
+
           <label className="field field_v1">
             <input
               // value={}
@@ -39,9 +40,15 @@ function Signup() {
               <span className="field__label">Password</span>
             </span>
           </label>
-        </div>
-      </form>
-    </>
+          <button
+            type="submit"
+            style={{ margin: "5rem auto 0 auto", background: "" }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 
