@@ -20,19 +20,13 @@ function EmptyCartDisplay() {
   );
 }
 
-function FillCartDisplay(data) {
-  const cart_items = data.order.productOrders || [];
-
-<<<<<<< HEAD
-=======
-const Cart = () => {
+function FillCartDisplay() {
   var orderId = localStorage.getItem("orderId");
   alert(orderId);
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c38e3ff5378518f35f210d" },
+    variables: { id: "62c289f31d0aed0a2bb75c78" },
   });
   const cart_items = data?.order.productOrders || [];
->>>>>>> e2aa90a (add logout button)
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
