@@ -38,6 +38,7 @@ export const CREATE_ORDER = gql`
 export const ADD_TO_CART = gql`
   mutation AddProductOrder($orderId: ID!, $productName: String!, $quantity: Int!, $price: Float!) {
     addProductOrder(orderId: $orderId, productName: $productName, quantity: $quantity, price: $price) {
+      _id
       total
       productOrders {
         productName

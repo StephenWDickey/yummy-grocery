@@ -46,6 +46,7 @@ const Footer = () => {
                 {/* <BsGithub /> */}
                 Tianchou Gong
               </a>
+              <a href="https://github.com/jyz022020">Kaylee Jin</a>
             </div>
           </section>
           <div className="white-divider" style={{ opacity: "0.5" }} />

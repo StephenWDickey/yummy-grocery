@@ -135,7 +135,18 @@
   background-color: var(--third-color);
   color: #fff;
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 0 0 0;
+  height: calc(100vh - 5rem);
+  min-height: min-content;
+}
+
+.signup div a {
+  color: #fff;
+  height: min-content;
+}
+
+.signup div {
+  width: fit-content;
 }
 
 .signup button {
@@ -185,6 +196,16 @@
 }
 
 #checkout:hover {
+  background-color: #a84d10;
+}
+
+#emptyCart button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
+}
+
+#emptyCart button:hover {
   background-color: #a84d10;
 }
 
@@ -349,29 +370,46 @@ footer #logo {
 }
 
 #coolsign {
-  font-family:'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 50px;
   font-weight: 300;
 }
 
 #coolsign {
   display: inline-block;
-  color:white;
+  color: white;
   font-size: 50px;
   position: relative;
-  left:20%;
-  top:50%;
- } 
+  left: 20%;
+  top: 50%;
+}
 
-#shopbtn{
+#shopbtn {
   position: relative;
-  left:20%;
-  top:50%;
+  left: 20%;
+  top: 50%;
 }
 /* Card */
 
 .card {
-
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
 }
 
+.card-img-top {
+  width: 100%;
+  min-width: 300px;
+}
 
+.card-title {
+  padding: 20px;
+  color: #fff;
+}
+
+.card-text {
+  color: #fff;
+}

@@ -2,47 +2,35 @@ import React, {useEffect} from "react";
 import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_CURRENT_ORDER } from "../../utils/queries";
+import { Link } from "react-router-dom";
 
-// import useLazyQuery hook
-import { useLazyQuery } from '@apollo/client';
+function EmptyCartDisplay() {
+  return (
+    <div
+      id="emptyCart"
+      className="container"
+      style={{ height: "50vh", textAlign: "center" }}
+    >
+      <h2>Oh No! You have an empty cart!</h2>
+      <h3>Add produce to it</h3>
+      <Link to="/">
+        <button>Back to Menu</button>
+      </Link>
+    </div>
+  );
+}
 
-
-import { QUERY_CHECKOUT } from '../../utils/queries'; 
-
-import { loadStripe } from '@stripe/stripe-js';
-
-import { useStoreContext } from '../../utils/GlobalState';
-
-const Cart = () => {
+function FillCartDisplay() {
+  var currentCartCount = localStorage.getItem("currentCartCount");
+  var orderId = localStorage.getItem("orderId");
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c38e3ff5378518f35f210d" },
+    variables: { id: orderId },
   });
   const cart_items = data?.order.productOrders || [];
-
-  // for lazyQuery
-  const [getCheckout] = useLazyQuery(QUERY_CHECKOUT);
-
-  // we use global state data
-  const [ state, dispatch ] = useStoreContext();
-
-
-  function submitCheckout() {
-    const productIds = [];
-
-    state.cart.forEach((item) => {
-      for (let i=0; i< item.purchaseQuantity; i++) {
-        productIds.push(item._id);
-      }
-    });
-
-    getCheckout({
-      variables: { products: productIds }
-    });
-
-    
-  }
-
-
+  const total = data?.order.total || 0;
+  const totalNumber = parseFloat(total);
+  const tax = totalNumber/10;
+  const totalAfterTax = totalNumber + tax;
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
@@ -50,18 +38,18 @@ const Cart = () => {
         <div className="text-container">
           <div>
             <div className="cart-flex">
-              <p>15 Items </p>
-              <p>$34.59</p>
+              <p>{currentCartCount} Items </p>
+              <p>${total}</p>
             </div>
             <div className="cart-flex">
-              <p>15 Items </p>
-              <p>$34.59</p>
+              <p>Sales Tax: </p>
+              <p>${tax}</p>
             </div>
           </div>
           <div className="white-divider" />
           <div className="cart-flex">
             <p>Total </p>
-            <p>$34.59</p>
+            <p>${totalAfterTax}</p>
           </div>
           <button id="checkout">Checkout</button>
         </div>
@@ -78,6 +66,14 @@ const Cart = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Cart;
+export default function Cart() {
+  var orderId = localStorage.getItem("orderId");
+  const { data } = useQuery(QUERY_CURRENT_ORDER, {
+    variables: { id: orderId },
+  });
+  console.log(orderId);
+  console.log(data);
+  return <>{data === null ? <EmptyCartDisplay /> : <FillCartDisplay />}</>;
+}

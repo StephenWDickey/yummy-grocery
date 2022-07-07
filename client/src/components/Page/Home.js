@@ -8,6 +8,7 @@ const Display = () => {
   // use useQuery hook to make query request
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   const products = data?.product || [];
+  console.log(products);
 
   
   return (
@@ -19,7 +20,7 @@ const Display = () => {
         </>
       ) : (
         <>
-        <div class="hero">
+        <div className="hero">
           <h1 id="coolsign">Fresh Fruits Today!</h1>
           <a id="shopbtn" href="/" className="btn btn-primary">
             Shop Now

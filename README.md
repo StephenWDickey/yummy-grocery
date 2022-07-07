@@ -28,12 +28,19 @@ SO THAT I can support my local community in a convenient and easy way!​
 <img align="center" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 <img align="center" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img align="center" src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white">
-<img align="center" src="https://img.shields.io/badge/MongoDB-00000F?style=for-the-logo=mysql&logoColor=white">
-<img align="center" src="https://img.shields.io/badge/React.JS-f0772b?style=for-the-badge&logo=Handlebars-JS&logoColor=fff">
+<img align="center" src="https://img.shields.io/badge/React.JS-f0772b?style=for-the-badge&logo=React&logoColor=fff">
 <img align="center" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
 <img align="center" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
-<img align="center" src="https://img.shields.io/badge/-Sequelize-090909?style=for-the-badge&logo=Sequelize"> 
 <img align="center" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white">
+<!-- <img align="center" src="https://img.shields.io/badge/-Sequelize-090909?style=for-the-badge&logo=Sequelize">  -->
+<img align="center" src="https://img.shields.io/badge/Graphql-f0772b?style=for-the-badge&logo=Graphql&logoColor=fff">
+<!-- <img align="center" src="https://img.shields.io/badge/-Graphql-brightgreen"> -->
+<!-- <img align="center" src="https://img.shields.io/badge/-Mongoose-orange"> -->
+<img align="center" src="https://img.shields.io/badge/Mongoose-CB3837?style=for-the-badge&logo=Mongoose&logoColor=white">
+<!-- <img align="center" src="https://img.shields.io/badge/MongoDB-00000F?style=for-the-logo=mysql&logoColor=white"> -->
+<img align="center" src="https://img.shields.io/badge/MongoDB-000000?style=for-the-badge&logo=mongodb
+&logoColor=white">
+
 
 ## Deployed application
 

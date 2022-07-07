@@ -37,6 +37,8 @@ class AuthService {
   logout() {
     
     localStorage.removeItem('id_token');
+    localStorage.removeItem('orderId');
+    localStorage.removeItem('currentCartCount');
    
     window.location.assign('/');
   }
