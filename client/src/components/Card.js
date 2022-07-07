@@ -2,15 +2,12 @@ import React from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART } from  "../utils/mutations";
 
-
-
-
-
 export default function Card(props) {
   const [addProduct, { error }] = useMutation(ADD_TO_CART);
   const addToCart = async (event) => {
     event.preventDefault();
     var orderId = localStorage.getItem("orderId");
+    var productImage = event.target.getAttribute("date-image");
     var productName = event.target.getAttribute("data-name");
     var productPrice = event.target.getAttribute("data-price");
     localStorage.setItem("currentCartCount", parseInt(localStorage.getItem("currentCartCount"))+ 1);
@@ -33,7 +30,7 @@ export default function Card(props) {
       <div className="card" style={cardStyle}>
         <img
           className="card-img-top"
-          // src={`../../public/images/${props.image}`}
+          src={`../../public/images/${props.image}`}
           alt="Card cap"
         />
         <div className="card-body">
