@@ -68,9 +68,10 @@ function FillCartDisplay() {
               token={handleToken}
               name = {"Checkout your items!"}
               amount = {totalAfterTax * 100}
+              id="checkout"
             />
           </div>
-          <button id="checkout">Checkout</button>
+          
         </div>
       </section>
 
