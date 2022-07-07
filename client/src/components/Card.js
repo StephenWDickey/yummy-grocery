@@ -1,6 +1,10 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_TO_CART } from "../utils/mutations";
+import { ADD_TO_CART } from  "../utils/mutations";
+
+
+
+
 
 export default function Card(props) {
   const [addProduct, { error }] = useMutation(ADD_TO_CART);
@@ -22,12 +26,14 @@ export default function Card(props) {
   const cardStyle = {
     width: "15rem",
   };
+
+  console.log(props.image);
   return (
     <div>
       <div className="card" style={cardStyle}>
         <img
           className="card-img-top"
-          // src={require(`${props.src}`)}
+          // src={`../../public/images/${props.image}`}
           alt="Card cap"
         />
         <div className="card-body">

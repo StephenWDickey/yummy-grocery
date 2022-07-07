@@ -1,3 +1,5 @@
+const stripe = require('stripe')("sk_test_51LJ0bKHO9kGri03OxeBhLOJCiSNJtr107yHgqQZuL0ZRGC5Khq1BIGmt3vit3Jq8JZAM6FNoSocarOWNU1U6uYAq008hjf0Tpd");
+const cors = require('cors');
 
 
 const express = require('express');
@@ -37,8 +39,14 @@ const server = new ApolloServer({
   context: authMiddleware
 });
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+
+app.post('/checkout', (req, res) => {
+  console.log(req.body);
+})
 
 
 

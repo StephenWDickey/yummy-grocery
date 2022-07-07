@@ -20,7 +20,7 @@ const resolvers = {
       product: async () => {
         
         const productData = await Product.find();
-        console.log (productData);
+        
         return productData;
         
       },

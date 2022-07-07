@@ -16,6 +16,10 @@ const productSchema = new Schema(
       minlength: 5
     },
 
+    // image: {
+    //   type: String
+    // }
+
     // comments: [
     //   {
     //     type: Schema.Types.ObjectId,

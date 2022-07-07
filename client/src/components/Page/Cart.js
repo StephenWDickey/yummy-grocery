@@ -3,6 +3,13 @@ import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_CURRENT_ORDER } from "../../utils/queries";
 import { Link } from "react-router-dom";
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+
+
+
+
+
 
 function EmptyCartDisplay() {
   return (
@@ -31,6 +38,12 @@ function FillCartDisplay() {
   const totalNumber = parseFloat(total);
   const tax = totalNumber/10;
   const totalAfterTax = totalNumber + tax;
+  
+
+  async function handleToken() {
+    const response = await axios.post('http://localhost:3001/checkout', orderId );
+  };
+
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
@@ -50,6 +63,12 @@ function FillCartDisplay() {
           <div className="cart-flex">
             <p>Total </p>
             <p>${totalAfterTax}</p>
+            <StripeCheckout 
+              stripeKey = "pk_test_51LJ0bKHO9kGri03OalRFlToYllIFut2WG5k2Cu9cLFgufJLwdAxQIUbDJor9glMQxyUcfolXmlLPIbqTpcDhSckY00G3PygrSE"
+              token={handleToken}
+              name = {"Checkout your items!"}
+              amount = {totalAfterTax * 100}
+            />
           </div>
           <button id="checkout">Checkout</button>
         </div>
@@ -75,5 +94,6 @@ export default function Cart() {
   });
   console.log(orderId);
   console.log(data);
+
   return <>{data === null ? <EmptyCartDisplay /> : <FillCartDisplay />}</>;
 }

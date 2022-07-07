@@ -13,12 +13,13 @@
   "dependencies": {
     "apollo-server-express": "^3.9.0",
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "faker": "^5.5.3",
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.14",
-    "stripe": "^9.11.0"
+    "stripe": "^9.12.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

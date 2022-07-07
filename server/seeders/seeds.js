@@ -11,6 +11,7 @@ db.once('open', async () => {
 
 
     db.collection('products').insertMany([
+        
         {
             name: 'Eggs - Cargo Free, 18 Each',
             price: 5.00
@@ -21,7 +22,8 @@ db.once('open', async () => {
         },
         {
             name: 'Fresh Blueberries',
-            price: 3.00
+            price: 3.00,
+            // image: "blueberry.jpg"
         },
         {
             name:'Organic Bananas',
