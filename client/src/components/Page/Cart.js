@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_CURRENT_ORDER } from "../../utils/queries";
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD
 function EmptyCartDisplay() {
   return (
     <div
@@ -22,9 +21,6 @@ function EmptyCartDisplay() {
 }
 
 function FillCartDisplay() {
-=======
-const Cart = () => {
->>>>>>> e2aa90a (add logout button)
   var orderId = localStorage.getItem("orderId");
   alert(orderId);
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
@@ -70,7 +66,7 @@ const Cart = () => {
 
 export default function Cart() {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c38e3ff5378518f35f210d" },
+    variables: { id: "62c289f31d0aed0a2bb75c78" },
   });
 
   console.log(data);
