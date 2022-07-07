@@ -20,7 +20,6 @@ function Popup(props) {
           style={{ cursor: "pointer" }}
         />
         {props.children}
-        <button>Logout</button>
       </div>
     </div>
   ) : (
@@ -108,6 +107,7 @@ function Nav() {
               <Popup trigger={open} setTrigger={setOpen}>
                 <h3>My popup</h3>
               </Popup>
+              <button className="logoutButton" onClick={() => Auth.logout()}>Logout</button>
             </>
           ) : (
             ""

@@ -10,7 +10,6 @@ import Auth from "../../utils/auth";
 // import Pineapples from "../images/Pineapple.png";
 
 const Login = (props) => {
-  var haveOrder = false;
   const [login, { error }] = useMutation(LOGIN_USER);
   const [createOrder] = useMutation(CREATE_ORDER);
   const createNewOrder = async() => {
@@ -19,7 +18,7 @@ const Login = (props) => {
         variables: { address: " ", total: 0 },
       });
       console.log(data.createOrder._id);
-      localStorage.setItem("orderid", data.createOrder._id);
+      localStorage.setItem("orderId", data.createOrder._id);
     } catch (e) {
       console.error(e);
     }

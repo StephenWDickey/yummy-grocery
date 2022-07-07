@@ -117,3 +117,7 @@
   transition: opacity 0.2s ease-out;
   will-change: opacity;
 }
+
+.logoutButton {
+  width: 100px;
+}
