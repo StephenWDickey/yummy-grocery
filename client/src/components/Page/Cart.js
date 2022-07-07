@@ -7,7 +7,17 @@ const Cart = () => {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
     variables: { id: "62c38e3ff5378518f35f210d" },
   });
+
   const cart_items = data?.order.productOrders || [];
+
+  if (!cart_items) {
+    return (
+      <>
+        <p>Nothing in here</p>
+      </>
+    );
+  }
+
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">

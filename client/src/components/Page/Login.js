@@ -74,7 +74,7 @@ const Login = (props) => {
           <label className="field field_v1">
             <input
               onChange={handleChange}
-              type="email"
+              // type="email"
               name="email"
               placeholder="email"
               className="field__input"
