@@ -1,16 +1,33 @@
 import React from "react";
 import "../../App.css";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function Signup() {
   return (
     <div className="signup">
       <div className="container ">
-        {/* <div className="logo-container">
-          <h1 id="logo">Yummy!</h1>
+        <div>
+          <Link to="/">
+            <MdOutlineKeyboardBackspace size={"3em"} />
+          </Link>
         </div>
-        <h2 id="slogan">We’ve Got You Coverd!</h2> */}
         <h2>Fill in the Details Below</h2>
         <form className="flex-display">
+          <label className="field field_v1">
+            <input
+              // value={}
+              // onChange={}
+              type="text"
+              name="username"
+              placeholder="username"
+              className="field__input"
+              required
+            />
+            <span className="field__label-wrap">
+              <span className="field__label">Username</span>
+            </span>
+          </label>
           <label className="field field_v1">
             <input
               // value={}

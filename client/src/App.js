@@ -15,8 +15,6 @@ import Header from "./components/NavBar";
 import Footer from "./components/Footer";
 import Auth from "./utils/auth";
 
-
-
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
 });
@@ -40,60 +38,55 @@ const client = new ApolloClient({
 });
 
 function App() {
-
   const loggedIn = Auth.loggedIn();
-
 
   return (
     <ApolloProvider client={client}>
       <div>
         <>
-        {
-          !loggedIn ? (
+          {!loggedIn ? (
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
           ) : (
-            
+            <div>
+              <Header />
               <div>
-                <Header />
-                <div>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/cart" element={<Cart />} />
-                  </Routes>
-                </div>
-                <Footer />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/cart" element={<Cart />} />
+                </Routes>
               </div>
-            
+              <Footer />
+            </div>
           )}
-      </>
-    </div>
-  </ApolloProvider>
+        </>
+      </div>
+    </ApolloProvider>
   );
 }
 
 export default App;
 
-{
-  loggin ? (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-    </Routes>
-  ) : (
-    <ApolloProvider client={client}>
-      <div>
-        <Header />
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </ApolloProvider>
-  );
-}
+// {
+//   loggin ? (
+//     <Routes>
+//       <Route path="/" element={<Login />} />
+//       <Route path="/signup" element={<Signup />} />
+//     </Routes>
+//   ) : (
+//     <ApolloProvider client={client}>
+//       <div>
+//         <Header />
+//         <div>
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/cart" element={<Cart />} />
+//           </Routes>
+//         </div>
+//         <Footer />
+//       </div>
+//     </ApolloProvider>
+//   );
+// }

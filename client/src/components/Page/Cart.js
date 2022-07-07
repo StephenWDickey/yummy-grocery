@@ -2,21 +2,26 @@ import React from "react";
 import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_CURRENT_ORDER } from "../../utils/queries";
+import { Link } from "react-router-dom";
 
-const Cart = () => {
-  const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c38e3ff5378518f35f210d" },
-  });
+function EmptyCartDisplay() {
+  return (
+    <div
+      id="emptyCart"
+      className="container"
+      style={{ height: "50vh", textAlign: "center" }}
+    >
+      <h2>Oh No! You have an empty cart!</h2>
+      <h3>Add produce to it</h3>
+      <Link to="/">
+        <button>Back to Menu</button>
+      </Link>
+    </div>
+  );
+}
 
-  const cart_items = data?.order.productOrders || [];
-
-  if (!cart_items) {
-    return (
-      <>
-        <p>Nothing in here</p>
-      </>
-    );
-  }
+function FillCartDisplay(data) {
+  const cart_items = data.order.productOrders || [];
 
   return (
     <div className="flex container">
@@ -53,6 +58,13 @@ const Cart = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Cart;
+export default function Cart() {
+  const { data } = useQuery(QUERY_CURRENT_ORDER, {
+    variables: { id: "62c38e3ff5378518f35f210d" },
+  });
+
+  console.log(data);
+  return <>{data === null ? <FillCartDisplay /> : <EmptyCartDisplay />}</>;
+}
