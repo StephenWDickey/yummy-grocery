@@ -371,7 +371,25 @@ footer #logo {
 /* Card */
 
 .card {
-
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
 }
 
+.card-img-top{
+  width:100%;
+  min-width:300px;
+}
 
+.card-title{
+  padding:20px;
+  color:#fff;
+}
+
+.card-text{
+  color:#fff
+
+}
