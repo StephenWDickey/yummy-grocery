@@ -21,12 +21,16 @@ function EmptyCartDisplay() {
 }
 
 function FillCartDisplay() {
+  var currentCartCount = localStorage.getItem("currentCartCount");
   var orderId = localStorage.getItem("orderId");
-  alert(orderId);
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c289f31d0aed0a2bb75c78" },
+    variables: { id: orderId },
   });
   const cart_items = data?.order.productOrders || [];
+  const total = data?.order.total || 0;
+  const totalNumber = parseFloat(total);
+  const tax = totalNumber/10;
+  const totalAfterTax = totalNumber + tax;
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
@@ -34,18 +38,18 @@ function FillCartDisplay() {
         <div className="text-container">
           <div>
             <div className="cart-flex">
-              <p>15 Items </p>
-              <p>$34.59</p>
+              <p>{currentCartCount} Items </p>
+              <p>${total}</p>
             </div>
             <div className="cart-flex">
-              <p>15 Items </p>
-              <p>$34.59</p>
+              <p>Sales Tax: </p>
+              <p>${tax}</p>
             </div>
           </div>
           <div className="white-divider" />
           <div className="cart-flex">
             <p>Total </p>
-            <p>$34.59</p>
+            <p>${totalAfterTax}</p>
           </div>
           <button id="checkout">Checkout</button>
         </div>
@@ -65,10 +69,11 @@ function FillCartDisplay() {
 }
 
 export default function Cart() {
+  var orderId = localStorage.getItem("orderId");
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
-    variables: { id: "62c289f31d0aed0a2bb75c78" },
+    variables: { id: orderId },
   });
-
+  console.log(orderId);
   console.log(data);
-  return <>{data === null ? <FillCartDisplay /> : <EmptyCartDisplay />}</>;
+  return <>{data === null ? <EmptyCartDisplay /> : <FillCartDisplay />}</>;
 }

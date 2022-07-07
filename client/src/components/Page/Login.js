@@ -12,6 +12,7 @@ import Auth from "../../utils/auth";
 const Login = (props) => {
   const [login, { error }] = useMutation(LOGIN_USER);
   const [createOrder] = useMutation(CREATE_ORDER);
+  localStorage.setItem("currentCartCount", 0);
   const createNewOrder = async() => {
     try {
       const { data } = await createOrder({
