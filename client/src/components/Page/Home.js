@@ -22,9 +22,9 @@ const Display = () => {
         <>
         <div className="hero">
           <h1 id="coolsign">Fresh Fruits Today!</h1>
-          {/* <a id="shopbtn" href="/" className="btn btn-primary">
+          <a id="shopbtn" href=".card" className="btn btn-primary">
             Shop Now
-          </a> */}
+          </a>
         </div>
         
         <div>

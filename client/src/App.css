@@ -377,19 +377,18 @@ footer #logo {
 
 #coolsign {
   display: inline-block;
-  color:#00A170;
-  font-size: 30px;
-  font-weight: bolder;
-  position: relative;
-  left: 5%;
-  top: 45%;
-}
-
-/* #shopbtn {
+  color: white;
+  font-size: 50px;
   position: relative;
   left: 20%;
-  top: 50%;} */
+  top: 50%;
+}
 
+#shopbtn {
+  position: relative;
+  left: 20%;
+  top: 50%;
+}
 /* Card */
 
 .card {
@@ -407,7 +406,7 @@ footer #logo {
 }
 
 .card-title {
-  padding: 1px;
+  padding: 20px;
   color: #fff;
 }
 
