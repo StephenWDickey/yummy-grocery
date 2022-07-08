@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Card from "../Card";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
-
 
 const Display = () => {
   // use useQuery hook to make query request
@@ -10,7 +9,6 @@ const Display = () => {
   const products = data?.product || [];
   console.log(products);
 
-  
   return (
     <main className="container" style={{ minHeight: "60vh" }}>
       {loading ? (
@@ -20,21 +18,30 @@ const Display = () => {
         </>
       ) : (
         <>
-        <div className="hero">
-          <h1 id="coolsign">Fresh Fruits Today!</h1>
-          <a id="shopbtn" href=".card" className="btn btn-primary">
-            Shop Now
-          </a>
-        </div>
-        
-        <div className="card-flex">
-          {products &&
-            products.map((product) => (
-              <Card name={product.name} price={product.price} image={product.image}/> 
-            ))}
-        </div>
-       </>
-       )};
+          <div className="hero">
+            <h1 id="coolsign">Fresh Fruits Today!</h1>
+            <a id="shopbtn" href=".card" className="btn btn-primary">
+              Shop Now
+            </a>
+          </div>
+
+<<<<<<< HEAD
+          <div className="card-flex">
+=======
+          <div className="flex">
+>>>>>>> 564db97 (Fixed images)
+            {products &&
+              products.map((product) => (
+                <Card
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                />
+              ))}
+          </div>
+        </>
+      )}
+      ;
     </main>
   );
 };
