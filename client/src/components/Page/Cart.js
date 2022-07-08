@@ -44,7 +44,6 @@ function FillCartDisplay() {
     const response = await axios.post('http://localhost:3001/checkout', orderId );
   };
 
-  
   return (
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
@@ -81,10 +80,7 @@ function FillCartDisplay() {
         <section className="cart-flex">
           {cart_items &&
             cart_items.map((product) => (
-              
-                <Card name={product.productName} price={product.price} />
-                
-              
+              <Card name={product.productName} price={product.price} />
             ))}
         </section>
       </div>
