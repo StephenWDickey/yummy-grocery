@@ -6,6 +6,7 @@ export const QUERY_PRODUCTS = gql`
       _id
       name
       price
+      image
     }
   }
 `;

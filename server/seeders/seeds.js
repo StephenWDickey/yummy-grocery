@@ -23,7 +23,7 @@ db.once('open', async () => {
         {
             name: 'Fresh Blueberries',
             price: 3.00,
-            // image: "blueberry.jpg"
+            image: "blueberry.jpg"
         },
         {
             name:'Organic Bananas',

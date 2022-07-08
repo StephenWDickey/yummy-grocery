@@ -30,6 +30,7 @@ const typeDefs = gql`
         _id: ID
         name: String
         price: Float
+        image: String
     
     }
 

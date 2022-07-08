@@ -31,7 +31,7 @@ const Display = () => {
           {/* src={product.src} */}
           {products &&
             products.map((product) => (
-              <Card name={product.name} price={product.price} /> 
+              <Card name={product.name} price={product.price} image={product.image}/> 
             ))}
         </div>
        </>

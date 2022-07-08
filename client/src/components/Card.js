@@ -33,7 +33,7 @@ export default function Card(props) {
       <div className="card" style={cardStyle}>
         <img
           className="card-img-top"
-          // src={`../../public/images/${props.image}`}
+          src={`../assets/images/${props.image}`}
           alt="Card cap"
         />
         <div className="card-body">
