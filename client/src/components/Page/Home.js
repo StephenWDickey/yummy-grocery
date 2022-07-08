@@ -27,8 +27,7 @@ const Display = () => {
           </a> */}
         </div>
         
-        <div>
-          {/* src={product.src} */}
+        <div className="Login-flex">
           {products &&
             products.map((product) => (
               <Card name={product.name} price={product.price} /> 
