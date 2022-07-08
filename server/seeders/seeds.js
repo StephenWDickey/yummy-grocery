@@ -73,6 +73,10 @@ db.once('open', async () => {
             price:5.99
         },
         {
+            name:'Butter',
+            price:3.99
+        },
+        {
             name:'Fresh Salmon, 1 Pound',
             price:13.99
         },

@@ -392,6 +392,11 @@ footer #logo {
 
 /* Card */
 
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .card {
   /* display: flex;
   flex-wrap: wrap; */
