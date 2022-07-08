@@ -105,9 +105,11 @@ function Nav() {
                 </div>
               </div>
               <Popup trigger={open} setTrigger={setOpen}>
-                <h3>My popup</h3>
+                <h3>{Auth.username}</h3>
+                <button className="logoutButton" onClick={() => Auth.logout()}>
+                  Logout
+                </button>
               </Popup>
-              <button className="logoutButton" onClick={() => Auth.logout()}>Logout</button>
             </>
           ) : (
             ""
