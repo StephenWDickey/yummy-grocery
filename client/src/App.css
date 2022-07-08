@@ -392,8 +392,8 @@ footer #logo {
 /* Card */
 
 .card {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   padding: 10px;
   text-align: center;
   border-style: solid;
