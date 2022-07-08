@@ -16,6 +16,11 @@ const productSchema = new Schema(
       minlength: 5
     },
 
+    image: {
+      type: String,
+      required: true,
+    }
+
     // image: {
     //   type: String
     // }
