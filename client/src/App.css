@@ -15,6 +15,7 @@
 .flex {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .flex-column {
