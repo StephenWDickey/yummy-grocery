@@ -35,11 +35,7 @@ export default function Card(props) {
   return (
     <div>
       <div className="card" style={cardStyle}>
-        <img
-          className="card-img-top"
-          src={`../assets/images/${props.image}`}
-          alt="Card cap"
-        />
+        <img className="card-img-top" src={`${props.image}`} alt="Card cap" />
         <div className="card-body">
           <h5>Name: {props.name}</h5>
           <p>Price: {props.price}</p>
