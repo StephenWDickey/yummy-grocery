@@ -25,11 +25,7 @@ const Display = () => {
             </a>
           </div>
 
-<<<<<<< HEAD
-          <div className="card-flex">
-=======
           <div className="flex">
->>>>>>> 564db97 (Fixed images)
             {products &&
               products.map((product) => (
                 <Card
