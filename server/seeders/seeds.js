@@ -14,101 +14,83 @@ db.once('open', async () => {
         
         {
             name: 'Eggs - Cargo Free, 18 Each',
-            price: 5.00,
-            image:"egg.webp"
+            price: 5.00
         },
         {
             name: 'Milk - Fat free, 0.5 Gallon',
-            price: 5.00,
-            image:"Milk.webp"
+            price: 5.00
         },
         {
             name: 'Fresh Blueberries',
             price: 3.00,
-            image: "blueberry.jpg"
+            // image: "blueberry.jpg"
         },
         {
             name:'Organic Bananas',
-            price:1.29,
-            image:"Bananas.webp"
+            price:1.29
         },
         {
             name:'Fresh Mango, 1 Each',
-            price:0.9,
-            image:"Mango.webp"
+            price:0.9
             
         },
         {
             name:'Fresh Kiwifruit, 1 Each',
-            price:1.29,
-            image:"Kiwifruit.jpg"
+            price:1.29
         },
         {
             name:'Large Pineaple, 1 Each',
-            price:2.49,
-            image:"Pineaple.jpg"
+            price:2.49
         
         },
         {
             name:'Tomatoes',
-            price:1.99,
-            image:"Tomatoes.jpg"
+            price:1.99
         },
         {
             name:'Potatoes',
-            price:1.99,
-            image:"Potatoes.jpg"
+            price:1.99
         },
         {
             name:'Organic Ginger',
-            price:1.49,
-            image:"Ginger.jpeg"
+            price:1.49
         },
         {
             name:'Organic Scallions, 1 Each',
-            price:1.49,
-            image:"Scallions.webp"
+            price:1.49
         },
         {
             name:'Yogurt',
-            price:1.49,
-            image:"Yogurt.webp"
+            price:1.49
         },
         {
             name:'Bakery Bread, 20 Ounce',
-            price:2.49,
-            image:"Bread.jfif"
+            price:2.49
             
         },
         {
             name:'Butter Croissants, 4ct',
-            price:5.99,
-            image:"Butter Croissants.jpeg"
+            price:5.99
         },
         {
             name:'Fresh Salmon, 1 Pound',
-            price:13.99,
-            image:"Salmon.jfif"
+            price:13.99
         },
         {
             name:'Tiger Shrimp',
-            price:8.99,
-            image:""
+            price:8.99
         },
         {
             name:'Chicken Breasts, 5 Pound',
-            price:13.99,
-            image:"Tiger Shrimp.jpg"
+            price:13.99
         },
         {
             name:'Chicken Wings, 2.3 Pound',
-            price:8.59,
-            image:"Chicken wings.jpeg"
+            price:8.59
         },
         {
             name:'New York Strip Steak, 1.4 Pound',
-            price:20.99,
-            image:"steak.webp"
+            price:20.99
         },
         
         
