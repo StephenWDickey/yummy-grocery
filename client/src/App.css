@@ -375,21 +375,21 @@ footer #logo {
   font-size: 50px;
   font-weight: 300;
 }
-
 #coolsign {
   display: inline-block;
-  color: white;
-  font-size: 50px;
+  color:#00A170;
+  font-size: 30px;
+  font-weight: bolder;
   position: relative;
-  left: 20%;
-  top: 50%;
+  left: 5%;
+  top: 45%;
 }
 
-#shopbtn {
+/* #shopbtn {
   position: relative;
   left: 20%;
-  top: 50%;
-}
+  top: 50%;} */
+/* } */
 /* Card */
 
 .card-flex {
