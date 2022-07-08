@@ -24,12 +24,7 @@ const Display = () => {
               Shop Now
             </a> */}
           </div>
-<<<<<<< HEAD
           <div className="card-flex">
-=======
-
-          <div className="flex">
->>>>>>> 95bddf2999ab766cb684ae5c733622a59a2f1916
             {products &&
               products.map((product) => (
                 <Card
