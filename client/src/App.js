@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 import Auth from "./utils/auth";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 // now we will create middleware function to retrieve token
