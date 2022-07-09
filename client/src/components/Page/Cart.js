@@ -5,9 +5,12 @@ import { QUERY_CURRENT_ORDER } from "../../utils/queries";
 import { Link } from "react-router-dom";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+// we need to update global state data when we remove item from cart
+import { useStoreContext } from '../../utils/GlobalState';
 
-
-
+// import indexedDB helper function
+import { idbPromise } from "../../utils/helpers";
 
 
 
@@ -27,7 +30,7 @@ function EmptyCartDisplay() {
   );
 }
 
-function FillCartDisplay() {
+function FillCartDisplay(props) {
   var currentCartCount = localStorage.getItem("currentCartCount");
   var orderId = localStorage.getItem("orderId");
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
@@ -39,20 +42,33 @@ function FillCartDisplay() {
   const tax = totalNumber/10;
   const totalAfterTax = totalNumber + tax;
   
+  console.log(props);
 
   async function handleToken() {
     const response = await axios.post('http://localhost:3001/checkout', orderId );
   };
 
+
+
+
+
+
+
   return (
+   
     <div className="flex container">
       <section id="cart-summary" className="cart-summary">
         <h3>Cart Summary</h3>
         <div className="text-container">
           <div>
             <div className="cart-flex">
-              <p>{currentCartCount} Items </p>
-              <p>${total}</p>
+            
+              {cart_items && cart_items.map((product) => (
+                <>
+                <p>{currentCartCount} Items </p>
+                <p>${total}</p>
+                </>
+                ))}
             </div>
             <div className="cart-flex">
               <p>Sales Tax: </p>
@@ -78,10 +94,25 @@ function FillCartDisplay() {
       <div className="cart-items">
         <h2 style={{ textAlign: "center" }}>Items In Cart</h2>
         <section className="cart-flex">
-          {cart_items &&
-            cart_items.map((product) => (
+          {cart_items && cart_items.map((product) => (
+            <>
               <Card name={product.productName} price={product.price} />
-            ))}
+              
+              
+                <input
+                  type="number"
+                  placeholder="1"
+                  value={props.purchaseQuantity}
+                />
+                <span
+                  role="img"
+                  aria-label="trash"
+                >
+                  🗑️
+                </span>
+            </>
+              
+          ))}
         </section>
       </div>
     </div>

@@ -13,6 +13,7 @@ export default function Card(props) {
       "currentCartCount",
       parseInt(localStorage.getItem("currentCartCount")) + 1
     );
+    
     try {
       const { data } = await addProduct({
         variables: {
@@ -40,6 +41,7 @@ export default function Card(props) {
           <h5>Name: {props.name}</h5>
           <p>Price: {props.price}</p>
           <p className="card-quantity">Quantity: 1</p>
+          
           <a
             onClick={addToCart}
             href="/"
@@ -53,4 +55,6 @@ export default function Card(props) {
       </div>
     </div>
   );
+
+
 }
