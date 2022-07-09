@@ -16,9 +16,9 @@ db.once('open', async () => {
         {
             name: 'Eggs - Cargo Free, 18 Each',
             price: 5.00,
-            image: "https://images.pexels.com/photos/4911724/pexels-photo-4911724.jpeg"
-
+            image: "https://images.pexels.com/photos/7947302/pexels-photo-7947302.jpeg?auto=compress&cs=tinysrgb&w=1600"
         },
+
         {
             name: 'Milk - Fat free, 0.5 Gallon',
             price: 5.00,
@@ -28,21 +28,22 @@ db.once('open', async () => {
         {
             name: 'Fresh Blueberries',
             price: 3.00,
-            image: "https://images.pexels.com/photos/583837/pexels-photo-583837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-
+            image: "https://images.pexels.com/photos/175422/pexels-photo-175422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             name:'Organic Bananas',
             price:1.29,
+            image:
+            "https://images.pexels.com/photos/7194915/pexels-photo-7194915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
 
-            image: "https://images.pexels.com/photos/2238309/pexels-photo-2238309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            // "https://images.pexels.com/photos/5946102/pexels-photo-5946102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        
         },
         {
             name:'Fresh Mango, 1 Each',
             price:0.90,
             image: "https://images.pexels.com/photos/7788416/pexels-photo-7788416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             
-
         },
 
         {
@@ -52,16 +53,15 @@ db.once('open', async () => {
             image: "https://images.pexels.com/photos/5945704/pexels-photo-5945704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-            name:'Large Pineaple, 1 Each',
+            name:'Large Pineapple, 1 Each',
             price:2.49,
-            image: "https://images.pexels.com/photos/6157056/pexels-photo-6157056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-
-        
+            image:"https://images.pexels.com/photos/189268/pexels-photo-189268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             name:'Tomatoes',
             price:1.99,
-            image: "https://images.pexels.com/photos/373019/pexels-photo-373019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            image:"https://images.pexels.com/photos/2718416/pexels-photo-2718416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        
         },
         {
             name:'Potatoes',
@@ -71,7 +71,8 @@ db.once('open', async () => {
         {
             name:'Organic Ginger',
             price:1.49,
-            image: "https://images.pexels.com/photos/10112135/pexels-photo-10112135.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            image:"https://images.pexels.com/photos/7657087/pexels-photo-7657087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
         },
         {
             name:'Organic Scallions, 1 Each',
@@ -81,7 +82,7 @@ db.once('open', async () => {
         {
             name:'Yogurt',
             price:1.49,
-            image: "https://images.pexels.com/photos/4428349/pexels-photo-4428349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            image: "https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             name:'Bakery Bread, 20 Ounce',
@@ -92,7 +93,7 @@ db.once('open', async () => {
         {
             name:'Butter Croissants, 4ct',
             price:5.99,
-            image: "https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            image: "https://images.pexels.com/photos/4828339/pexels-photo-4828339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             name:'Butter',
@@ -117,12 +118,14 @@ db.once('open', async () => {
         {
             name:'Chicken Wings, 2.3 Pound',
             price:8.59,
-            image: "https://images.pexels.com/photos/5652264/pexels-photo-5652264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            image:"https://images.pexels.com/photos/5695607/pexels-photo-5695607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"            
+            // "https://images.pexels.com/photos/10292080/pexels-photo-10292080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            
         },
         {
             name:'New York Strip Steak, 1.4 Pound',
             price:20.99,
-            image: "https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            image: "https://images.pexels.com/photos/9843971/pexels-photo-9843971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
         },
         
         
