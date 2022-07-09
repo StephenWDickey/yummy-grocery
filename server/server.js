@@ -1,36 +1,17 @@
-const stripe = require('stripe')("sk_test_51LJ0bKHO9kGri03OxeBhLOJCiSNJtr107yHgqQZuL0ZRGC5Khq1BIGmt3vit3Jq8JZAM6FNoSocarOWNU1U6uYAq008hjf0Tpd");
+
 const cors = require('cors');
-
-
 const path = require('path');
-
-
 const express = require('express');
-
-
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
-
-
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
-
-
 const db = require('./config/connection');
-
-
-
 // import auth middleware for JWT
 // pass it in as context for new server instance
 const { authMiddleware } = require('./utils/auth');
-
-
 const PORT = process.env.PORT || 3001;
-
-
 const app = express();
-
-
 // create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
   typeDefs,
@@ -41,8 +22,6 @@ const server = new ApolloServer({
   // authMiddleware seems to break graphQL server
   context: authMiddleware
 });
-
-
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
