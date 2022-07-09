@@ -42,7 +42,10 @@ const server = new ApolloServer({
   context: authMiddleware
 });
 
-
+// Serve up static assets
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 // Step 1:
 app.use(express.static(path.resolve(__dirname, "./client/build")));
