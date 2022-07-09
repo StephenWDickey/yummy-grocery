@@ -44,11 +44,12 @@ const server = new ApolloServer({
 
 
 
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-// Step 2:
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+  response.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 
