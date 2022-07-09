@@ -408,7 +408,7 @@ footer #logo {
 
 .card-img-top {
   width: 100%;
-  min-width: 300px;
+  min-width: 100px;
 }
 
 .card-title {
