@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1/yummy-grocery',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/yummy-grocery',
   {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
