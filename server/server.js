@@ -2,6 +2,9 @@ const stripe = require('stripe')("sk_test_51LJ0bKHO9kGri03OxeBhLOJCiSNJtr107yHgq
 const cors = require('cors');
 
 
+const path = require('path');
+
+
 const express = require('express');
 
 
@@ -38,6 +41,16 @@ const server = new ApolloServer({
   // authMiddleware seems to break graphQL server
   context: authMiddleware
 });
+
+
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
+
 
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
