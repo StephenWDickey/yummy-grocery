@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 import Auth from "./utils/auth";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "https://git.heroku.com/yummygrocery.git/graphql",
 });
 
 // now we will create middleware function to retrieve token
