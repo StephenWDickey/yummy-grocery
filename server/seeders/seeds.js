@@ -6,11 +6,6 @@ const db = require('../config/connection');
 
 
 db.once('open', async () => {
-
-
-    db.dropDatabase();
-
-
     db.collection('products').insertMany([
         
         {
@@ -130,24 +125,5 @@ db.once('open', async () => {
         
         
     ], console.log('Products seeded!'));
-
-
-    db.collection('users').insertMany([
-        {
-            username: 'Test Testerson',
-            email: "test@test.com",
-            password: "12345"
-        },
-        {
-            username: 'Cody Coder',
-            email: "test2@test.com",
-            password: "12345"
-        },
-        {
-            username: 'Polly Programmer',
-            email: "test3@test.com",
-            password: "12345"
-        }
-    ], console.log('Users seeded!'));
 });
 
