@@ -97,13 +97,6 @@ function FillCartDisplay(props) {
           {cart_items && cart_items.map((product) => (
             <>
               <Card name={product.productName} price={product.price} />
-              
-              
-                <input
-                  type="number"
-                  placeholder="1"
-                  value={props.purchaseQuantity}
-                />
                 <span
                   role="img"
                   aria-label="trash"
