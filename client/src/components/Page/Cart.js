@@ -42,7 +42,7 @@ function FillCartDisplay(props) {
   const tax = totalNumber/10;
   const totalAfterTax = totalNumber + tax;
   
-  console.log(props);
+  
 
   async function handleToken() {
     const response = await axios.post('http://localhost:3001/checkout', orderId );
@@ -124,8 +124,7 @@ export default function Cart() {
   const { data } = useQuery(QUERY_CURRENT_ORDER, {
     variables: { id: orderId },
   });
-  console.log(orderId);
-  console.log(data);
+  
 
   return <>{data === null ? <EmptyCartDisplay /> : <FillCartDisplay />}</>;
 }

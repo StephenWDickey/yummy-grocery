@@ -32,7 +32,7 @@ export default function Card(props) {
     width: "15rem",
   };
 
-  console.log(props.image);
+  
   return (
     <div>
       <div className="card" style={cardStyle}>

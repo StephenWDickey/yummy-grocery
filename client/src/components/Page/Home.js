@@ -7,7 +7,7 @@ const Display = () => {
   // use useQuery hook to make query request
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   const products = data?.product || [];
-  console.log(products);
+  
 
   return (
     <main className="container" style={{ minHeight: "60vh" }}>
