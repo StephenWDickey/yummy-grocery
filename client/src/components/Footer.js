@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsGithub } from "react-icons/bs";
 import Auth from "../utils/auth";
 
 const Footer = () => {
@@ -9,9 +8,11 @@ const Footer = () => {
       {Auth.loggedIn() ? (
         <footer>
           <div className="logo-div">
-            <h4 id="logo" style={{ paddingBottom: "1.5rem" }}>
-              Yummy!
-            </h4>
+            <Link to="/">
+              <h4 id="logo" style={{ paddingBottom: "1.5rem" }}>
+                Yummy!
+              </h4>
+            </Link>
           </div>
           <section className="container flex" style={{ width: "100%" }}>
             {Auth.loggedIn() ? (
@@ -23,6 +24,9 @@ const Footer = () => {
                   </Link>
                   <Link to="/cart">
                     <p>Cart</p>
+                  </Link>
+                  <Link to="/dashboard">
+                    <p>Dashboard</p>
                   </Link>
                 </div>
               </>

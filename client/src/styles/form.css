@@ -121,3 +121,49 @@
 .logoutButton {
   width: 100px;
 }
+
+/* White Background */
+#addProduct .field__input {
+  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #000);
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#addProduct .field__input:focus::-webkit-input-placeholder {
+  color: var(--uiFieldPlaceholderColor);
+}
+
+#addProduct .field__input:focus::-moz-placeholder {
+  color: var(--uiFieldPlaceholderColor);
+}
+
+#addProduct .field {
+  width: 80%;
+  max-width: 500px;
+  --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+  --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+  --uiFieldBorderColorActive: var(
+    --fieldBorderColorActive,
+    var(--secondary-color)
+  );
+  display: var(--fieldDisplay, inline-flex);
+  position: relative;
+  font-size: var(--fieldFontSize, 1rem);
+}
+
+#addProduct .field__input {
+  box-sizing: border-box;
+  width: var(--fieldWidth, 100%);
+  height: var(--fieldHeight, 3rem);
+  padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight)
+    var(--fieldPaddingBottom, 0.5rem) var(--uiFieldPaddingLeft);
+  border-bottom: var(--uiFieldBorderWidth) solid
+    var(--fieldBorderColor, rgba(0, 0, 0, 0.75));
+  color: #000;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART } from "../utils/mutations";
 
@@ -7,13 +8,17 @@ export default function Card(props) {
   const addToCart = async (event) => {
     event.preventDefault();
     var orderId = localStorage.getItem("orderId");
+    console.log("orderId: " +   orderId);
     var productName = event.target.getAttribute("data-name");
     var productPrice = event.target.getAttribute("data-price");
+    var productImage = event.target.getAttribute("data-link");
     localStorage.setItem(
       "currentCartCount",
       parseInt(localStorage.getItem("currentCartCount")) + 1
     );
-    
+    localStorage.setItem(productName, productImage);
+
+
     try {
       const { data } = await addProduct({
         variables: {
@@ -32,29 +37,29 @@ export default function Card(props) {
     width: "15rem",
   };
 
-  console.log(props.image);
+  console.log(props);
+
   return (
-    <div>
-      <div className="card" style={cardStyle}>
-        <img className="card-img-top" src={`${props.image}`} alt="Card cap" />
-        <div className="card-body">
-          <h5>Name: {props.name}</h5>
-          <p>Price: {props.price}</p>
-          <p className="card-quantity">Quantity: 1</p>
-          
-          <a
-            onClick={addToCart}
-            href="/"
-            className="btn btn-primary"
-            data-name={props.name}
-            data-price={props.price}
-          >
-            Add to Cart
-          </a>
-        </div>
+    <div className="card">
+      {/* <a href={`/product/${props.id}`}></a> */}
+      <div className="card-img">
+        <img style={{ width: "100%" }} src={`${props.image}`} alt="Card cap" />
+      </div>
+
+      <div className="card-body">
+        <h5>{props.name}</h5>
+        <p> ${props.price}</p>
+        <p>{props.id}</p>
+
+        <a
+          onClick={addToCart}
+          href="/"
+          data-name={props.name}
+          data-price={props.price}
+        >
+          <button onClick={addToCart} data-name={props.name} data-link={props.image} data-price={props.price}>Add to Cart</button>
+        </a>
       </div>
     </div>
   );
-
-
 }

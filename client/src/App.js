@@ -11,12 +11,16 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Header from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Auth from "./utils/auth";
+import Success from "./components/Page/Success";
+import SingleProduct from "./components/SingleProduct";
+import Dashboard from "./components/Page/Dashboard";
+import AddProduct from "./components/Page/AddProduct";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "http://localhost:3001/graphql",
 });
 
 // now we will create middleware function to retrieve token
@@ -51,11 +55,19 @@ function App() {
             </Routes>
           ) : (
             <div>
-              <Header />
+              <NavBar />
               <div>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/cart" element={<Cart />} />
+                  <Route path="/product/:id" element={<SingleProduct />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route
+                    path="/dashboard/addProduct"
+                    element={<AddProduct />}
+                  />
+                  <Route path="/dashboard/:id" element={<Dashboard />} />
+                  <Route path="/success" element={<Success />} />
                 </Routes>
               </div>
               <Footer />
@@ -68,25 +80,3 @@ function App() {
 }
 
 export default App;
-
-// {
-//   loggin ? (
-//     <Routes>
-//       <Route path="/" element={<Login />} />
-//       <Route path="/signup" element={<Signup />} />
-//     </Routes>
-//   ) : (
-//     <ApolloProvider client={client}>
-//       <div>
-//         <Header />
-//         <div>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/cart" element={<Cart />} />
-//           </Routes>
-//         </div>
-//         <Footer />
-//       </div>
-//     </ApolloProvider>
-//   );
-// }
