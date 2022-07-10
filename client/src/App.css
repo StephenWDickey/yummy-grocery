@@ -384,11 +384,6 @@ footer #logo {
   top: 45%;
 }
 
-/* #shopbtn {
-  position: relative;
-  left: 20%;
-  top: 50%;} */
-/* } */
 /* Card */
 
 .card {
@@ -423,15 +418,84 @@ footer #logo {
   padding: 10px;
 }
 
-/* .card-title {
-  padding: 20px;
+/* Success Page */
+
+#success-message button {
+  background-color: var(--secondary-color);
   color: #fff;
+  transition: 0.1s ease-in;
 }
 
-.card-text {
-  color: #fff;
-} */
+#success-message button:hover {
+  background-color: #a84d10;
+}
 
 /* Mobile Screens */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
+  /* Sign Up CSS */
+
+  .signup {
+    background-color: var(--third-color);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    height: calc(100vh - 6rem);
+    min-height: min-content;
+  }
+
+  /* Login CSS */
+  .Login-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Login-img-size {
+    background-size: cover;
+    max-width: 100vw;
+    height: fit-content;
+  }
+
+  .Login-flex h1 {
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .Login-flex h2 {
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .Login-img-size #slogan {
+    width: 55%;
+  }
+
+  .login-background {
+    width: 100vw;
+    padding: 0;
+  }
+
+  .btn-flex {
+    padding: 0.25rem 2rem;
+    height: 175px;
+  }
+
+  /* NavBar CSS */
+  .NavBar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .NavBar h1 {
+    padding-bottom: 1rem;
+    font-size: 32px;
+  }
+
+  .NavBar #slogan {
+    padding-bottom: 1rem;
+    font-size: 28px;
+  }
+
+  /* Footer CSS */
+  footer section {
+    text-align: center;
+    flex-direction: column;
+  }
 }

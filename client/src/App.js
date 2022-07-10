@@ -14,9 +14,11 @@ import { setContext } from "@apollo/client/link/context";
 import Header from "./components/NavBar";
 import Footer from "./components/Footer";
 import Auth from "./utils/auth";
+import Success from "./components/Page/Success";
+import SingleProduct from "./components/SingleProduct";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 // now we will create middleware function to retrieve token
@@ -56,8 +58,9 @@ function App(props) {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/cart" element={<Cart />} />
-                  {/* <Route path="/product/:id" element={"Single Page Here"} /> */}
+                  <Route path="/product/:id" element={<SingleProduct />} />
                   {/* <Route path="/dashboard element={"Dashboard to add products"} /> */}
+                  <Route path="/success" element={<Success />} />
                 </Routes>
               </div>
               <Footer />
