@@ -31,8 +31,6 @@ export default function Card(props) {
   const cardStyle = {
     width: "15rem",
   };
-
-  console.log(props.image);
   return (
     <div>
       <div className="card" style={cardStyle}>

@@ -48,6 +48,10 @@ function FillCartDisplay(props) {
     const response = await axios.post('http://localhost:3001/checkout', orderId );
   };
 
+  // async function stripeHandler() {
+    
+  // };
+
 
 
 
@@ -85,6 +89,7 @@ function FillCartDisplay(props) {
               name = {"Checkout your items!"}
               amount = {totalAfterTax * 100}
               id="checkout"
+              //onClick= {stripeHandler}
             />
           </div>
           
