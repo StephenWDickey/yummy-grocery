@@ -47,9 +47,11 @@ function FillCartDisplay(props) {
     );
   }
 
-  // async function stripeHandler() {
 
-  // };
+
+
+
+
 
   return (
     <div className="flex container">
@@ -81,7 +83,6 @@ function FillCartDisplay(props) {
               name={"Checkout your items!"}
               amount={totalAfterTax * 100}
               id="checkout"
-              //onClick= {stripeHandler}
             />
           </div>
         </div>

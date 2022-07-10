@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "proxy": "http://localhost:3001",
-=======
   "proxy": "http://localhost:3001/",
->>>>>>> b0ed1a8 (Add components)
   "name": "client",
   "version": "0.1.0",
   "private": true,

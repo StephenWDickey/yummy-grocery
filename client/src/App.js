@@ -39,7 +39,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App(props) {
+function App() {
   const loggedIn = Auth.loggedIn();
 
   return (

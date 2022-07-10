@@ -11,14 +11,6 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
-export const QUERY_USERS = gql`
-  query User($id: ID!) {
-    users (_id: $id) {
-      username
-    }
-  }
-`;
-
 export const QUERY_CURRENT_ORDER = gql`
   query Order($id: ID!) {
     order(_id: $id) {

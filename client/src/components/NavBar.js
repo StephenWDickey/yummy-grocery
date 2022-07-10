@@ -1,5 +1,5 @@
-import React, { useState, useQuery } from "react";
-import AuthService from "../utils/auth";
+import React, { useState } from "react";
+import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import Cart from "./Page/Cart";
 import {
@@ -10,11 +10,7 @@ import {
 // import SearchBar from "../SearchBar/SearchBar";
 // import ShoeData from "../../Data.json";
 
-import { QUERY_USERS } from "../utils/queries";
-
-
 function Popup(props) {
-  
   return props.trigger ? (
     <div className="popup">
       <div className="popup-inner">
@@ -32,14 +28,8 @@ function Popup(props) {
 }
 
 function Nav() {
-
-  const userData = AuthService.getProfile(localStorage.getItem('id_token'));
-
-  console.log(userData.data.username);
-  
-  
   function showNavigation() {
-    if (AuthService.loggedIn()) {
+    if (Auth.loggedIn()) {
       return (
         <ul className="headerNav" style={{ listStyle: "none" }}>
           <li className="mx-1">
@@ -55,7 +45,7 @@ function Nav() {
           <li className="mx-1">
             <a
               href="/"
-              onClick={() => AuthService.logout()}
+              onClick={() => Auth.logout()}
               style={{ textDecoration: "none" }}
             >
               Logout
@@ -87,9 +77,9 @@ function Nav() {
 
   return (
     <>
-      {AuthService.loggedIn() ? (
+      {Auth.loggedIn() ? (
         <header className="NavBar headerNav px-1">
-          {AuthService.loggedIn() ? (
+          {Auth.loggedIn() ? (
             <h1>
               <Link to="/" style={{ textDecoration: "none" }}>
                 Yummy!
@@ -100,7 +90,7 @@ function Nav() {
           )}
 
           <h2 id="slogan">We’ve Got You Coverd!</h2>
-          {AuthService.loggedIn() ? (
+          {Auth.loggedIn() ? (
             <>
               <div className="flex" style={{ width: "100px" }}>
                 <Link to="/cart">
@@ -115,8 +105,8 @@ function Nav() {
                 </div>
               </div>
               <Popup trigger={open} setTrigger={setOpen}>
-                <h3>{userData.data.username}</h3>
-                <button className="logoutButton" onClick={() => AuthService.logout()}>
+                <h3>{Auth.username}</h3>
+                <button className="logoutButton" onClick={() => Auth.logout()}>
                   Logout
                 </button>
               </Popup>

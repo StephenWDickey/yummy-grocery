@@ -28,6 +28,9 @@ export default function Card(props) {
       console.error(e);
     }
   };
+  const cardStyle = {
+    width: "15rem",
+  };
 
   console.log(props.image);
   return (

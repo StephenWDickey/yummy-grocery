@@ -20,7 +20,6 @@ const Login = (props) => {
       });
       console.log(data.createOrder._id);
       localStorage.setItem("orderId", data.createOrder._id);
-      
     } catch (e) {
       console.error(e);
     }
