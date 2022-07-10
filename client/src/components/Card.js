@@ -8,7 +8,6 @@ export default function Card(props) {
   const addToCart = async (event) => {
     event.preventDefault();
     var orderId = localStorage.getItem("orderId");
-    console.log("orderId: " +   orderId);
     var productName = event.target.getAttribute("data-name");
     var productPrice = event.target.getAttribute("data-price");
     var productImage = event.target.getAttribute("data-link");
@@ -51,12 +50,7 @@ export default function Card(props) {
         <p> ${props.price}</p>
         <p>{props.id}</p>
 
-        <a
-          onClick={addToCart}
-          href="/"
-          data-name={props.name}
-          data-price={props.price}
-        >
+        <a>
           <button onClick={addToCart} data-name={props.name} data-link={props.image} data-price={props.price}>Add to Cart</button>
         </a>
       </div>
