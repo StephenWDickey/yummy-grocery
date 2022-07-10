@@ -47,9 +47,14 @@
   border-width: 1px;
   box-shadow: -3px 5px 5px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  width: 250px;
+  width: 175px;
   min-height: min-content;
-  margin: 2rem 2rem;
+  margin: 2rem 1rem;
+  padding: 1rem;
+}
+
+.AdminCard p {
+  font-weight: 600;
 }
 
 .card {

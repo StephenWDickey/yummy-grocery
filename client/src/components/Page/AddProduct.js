@@ -5,9 +5,11 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 export default function AddProduct() {
   return (
     <div id="addProduct" className="container" style={{ textAlign: "center" }}>
-      <Link to="/">
-        <MdOutlineKeyboardBackspace size={"3em"} />
-      </Link>
+      <div style={{ margin: "0 auto 0 20%", width: "fit-content" }}>
+        <Link to="/dashboard" style={{ color: "#000" }}>
+          <MdOutlineKeyboardBackspace size={"3em"} />
+        </Link>
+      </div>
       <h2>Fill Out the Info Below to Add A Product</h2>
       <form className="flex-display">
         {/* onSubmit={handleFormSubmit} */}

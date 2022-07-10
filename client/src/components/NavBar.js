@@ -49,16 +49,21 @@ function Nav() {
         >
           <h4>Username: {userData.data.username}</h4>
           <h4>Email: {userData.data.email}</h4>
-          <Link to="/dashboard">
-            <button id="dashboard-btn">Dashboard</button>
-          </Link>
-          <button
-            id="logout"
-            className="logoutButton"
-            onClick={() => Auth.logout()}
+          <div
+            className="flex-column"
+            style={{ justifyContent: "center", alignItems: "center" }}
           >
-            Logout
-          </button>
+            <Link to="/dashboard" style={{ width: "fit-content" }}>
+              <button id="dashboard-btn">Dashboard</button>
+            </Link>
+            <button
+              id="logout"
+              className="logoutButton"
+              onClick={() => Auth.logout()}
+            >
+              Logout
+            </button>
+          </div>
         </CustomPopup>
       </>
     </header>

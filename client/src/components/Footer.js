@@ -25,6 +25,9 @@ const Footer = () => {
                   <Link to="/cart">
                     <p>Cart</p>
                   </Link>
+                  <Link to="/dashboard">
+                    <p>Dashboard</p>
+                  </Link>
                 </div>
               </>
             ) : (
