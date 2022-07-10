@@ -20,7 +20,7 @@ import Dashboard from "./components/Page/Dashboard";
 import AddProduct from "./components/Page/AddProduct";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 // now we will create middleware function to retrieve token
