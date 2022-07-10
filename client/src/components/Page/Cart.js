@@ -47,12 +47,6 @@ function FillCartDisplay(props) {
     );
   }
 
-
-
-
-
-
-
   return (
     // Will either display the cart if the cart is filled or show and empty cart component when the cart is empty
     <>
@@ -104,27 +98,7 @@ function FillCartDisplay(props) {
                     </span>
                   </>
                 ))}
-<<<<<<< HEAD
-            </div>
-            <div className="cart-flex">
-              <p>Sales Tax: </p>
-              <p>${tax}</p>
-            </div>
-          </div>
-          <div className="white-divider" />
-          <div className="cart-flex">
-            <p>Total </p>
-            <p>${totalAfterTax}</p>
-            <StripeCheckout
-              stripeKey="pk_test_51LJ0bKHO9kGri03OalRFlToYllIFut2WG5k2Cu9cLFgufJLwdAxQIUbDJor9glMQxyUcfolXmlLPIbqTpcDhSckY00G3PygrSE"
-              token={handleToken}
-              name={"Checkout your items!"}
-              amount={totalAfterTax * 100}
-              id="checkout"
-            />
-=======
             </section>
->>>>>>> d02b7b8 (Added Admin Pages and Update CSS Styles)
           </div>
         </div>
       ) : (

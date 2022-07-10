@@ -7,7 +7,7 @@ import CustomPopup from "./CustumPopup";
 import { QUERY_USERS } from "../utils/queries";
 
 function Nav() {
-  const userData = AuthService.getProfile(localStorage.getItem("id_token"));
+  const userData = Auth.getProfile(localStorage.getItem("id_token"));
 
   console.log(userData.data);
 
@@ -55,7 +55,7 @@ function Nav() {
           <button
             id="logout"
             className="logoutButton"
-            onClick={() => AuthService.logout()}
+            onClick={() => Auth.logout()}
           >
             Logout
           </button>
