@@ -431,3 +431,7 @@ footer #logo {
 .card-text {
   color: #fff;
 } */
+
+/* Mobile Screens */
+@media screen and (max-width: 500px) {
+}

@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 import Auth from "./utils/auth";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "http://localhost:3001/graphql",
 });
 
 // now we will create middleware function to retrieve token
@@ -56,6 +56,8 @@ function App(props) {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/cart" element={<Cart />} />
+                  {/* <Route path="/product/:id" element={"Single Page Here"} /> */}
+                  {/* <Route path="/dashboard element={"Dashboard to add products"} /> */}
                 </Routes>
               </div>
               <Footer />
