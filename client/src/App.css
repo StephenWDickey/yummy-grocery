@@ -42,6 +42,49 @@
   margin: auto;
 }
 
+.AdminCard {
+  text-align: center;
+  border-width: 1px;
+  box-shadow: -3px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 250px;
+  min-height: min-content;
+  margin: 2rem 2rem;
+}
+
+.card {
+  text-align: center;
+  border-width: 1px;
+  box-shadow: -5px 15px 5px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 250px;
+  min-height: 200px;
+  margin: 2rem 2rem;
+  border-radius: 5px;
+}
+
+.card-img {
+  width: 250px;
+  height: 150px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.1s ease-in;
+}
+
+.card button:hover {
+  background-color: #a84d10;
+}
+
+.card-body {
+  padding: 10px;
+}
+
 /* Login Page */
 
 .Login-flex {
@@ -158,7 +201,7 @@
 /* Cart Page CSS */
 .cart-summary {
   background-color: var(--third-color);
-  max-width: 425px;
+  max-width: 400px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -241,31 +284,102 @@
   color: #fff;
 }
 
-.popup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-  /* transition: 0.1s ease-in; */
+/* Dashboard CSS */
+#dashboard button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
 }
 
-.popup-inner {
-  background-color: rgba(256, 265, 256, 0.75);
-  padding: 1rem 2rem;
+#dashboard button:hover {
+  background-color: #a84d10;
+}
+
+/* Popup */
+
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
   border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup p {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup #logout {
+  background-color: #d11a2a;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.1s ease-in;
+}
+
+.popup #logout:hover {
+  background-color: rgb(173, 22, 34);
+}
+
+.popup #dashboard-btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+  transition: 0.1s ease-in;
+}
+
+.popup #dashboard-btn:hover {
+  background-color: #a84d10;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  cursor: pointer;
   color: #000;
-  max-width: 350px;
-  width: 100%;
-  pointer-events: auto;
-  /* margin: auto; */
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .popup {
+    width: 70%;
+  }
 }
 
 /* Footer CSS */
@@ -275,6 +389,11 @@ footer #logo {
   font-size: 36px;
   text-align: center;
   opacity: 0.75;
+  transition: 0.1s ease-in;
+}
+
+footer #logo:hover {
+  color: var(--secondary-color);
 }
 
 .logo-div {
@@ -362,12 +481,20 @@ footer #logo {
 /* Home page */
 
 .hero {
-  height: 500px;
+  min-height: 50vh;
+  height: 100%;
   width: 100%;
-  margin-bottom: 25px;
-  background-image: url("./assets/images/fruits.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/fruits.jpg");
+  color: #fff;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #coolsign {
@@ -384,40 +511,6 @@ footer #logo {
   top: 45%;
 }
 
-/* Card */
-
-.card {
-  text-align: center;
-  border-width: 1px;
-  box-shadow: -5px 15px 5px 0px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  width: 270px;
-  min-height: 200px;
-  margin: 2rem 2rem;
-  border-radius: 5px;
-}
-
-.card button {
-  background-color: var(--secondary-color);
-  color: #fff;
-  transition: 0.1s ease-in;
-}
-
-.card button:hover {
-  background-color: #a84d10;
-}
-
-.card-img {
-  width: 250px;
-  height: 250px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.card-body {
-  padding: 10px;
-}
-
 /* Success Page */
 
 #success-message button {
@@ -427,6 +520,28 @@ footer #logo {
 }
 
 #success-message button:hover {
+  background-color: #a84d10;
+}
+
+/* Single Page CSS */
+
+.product-image {
+  width: 400px;
+  height: fit-content;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.65);
+}
+
+.product-image img {
+  width: 100%;
+}
+
+#single-product button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
+}
+
+#single-product button:hover {
   background-color: #a84d10;
 }
 

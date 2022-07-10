@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_CART } from "../utils/mutations";
 
@@ -32,15 +33,19 @@ export default function Card(props) {
     width: "15rem",
   };
 
-  console.log(props.image);
+  console.log(props);
+
   return (
     <div className="card">
+      {/* <a href={`/product/${props.id}`}></a> */}
       <div className="card-img">
         <img style={{ width: "100%" }} src={`${props.image}`} alt="Card cap" />
       </div>
+
       <div className="card-body">
-        <h5>Name: {props.name}</h5>
-        <p>Price: {props.price}</p>
+        <h5>{props.name}</h5>
+        <p> ${props.price}</p>
+        <p>{props.id}</p>
 
         <a
           onClick={addToCart}

@@ -54,19 +54,57 @@ function FillCartDisplay(props) {
 
 
   return (
-    <div className="flex container">
-      <section id="cart-summary" className="cart-summary">
-        <h3>Cart Summary</h3>
-        <div className="text-container">
-          <div>
-            <div className="cart-flex">
+    // Will either display the cart if the cart is filled or show and empty cart component when the cart is empty
+    <>
+      {cart_items === null ? (
+        <div className="flex container">
+          <section id="cart-summary" className="cart-summary">
+            <h3>Cart Summary</h3>
+            <div className="text-container">
+              <div>
+                <div className="cart-flex">
+                  {cart_items &&
+                    cart_items.map((product) => (
+                      <>
+                        <p>{currentCartCount} Items </p>
+                        <p>${total}</p>
+                      </>
+                    ))}
+                </div>
+                <div className="cart-flex">
+                  <p>Sales Tax: </p>
+                  <p>${tax}</p>
+                </div>
+              </div>
+              <div className="white-divider" />
+              <div className="cart-flex">
+                <p>Total </p>
+                <p>${totalAfterTax}</p>
+                <StripeCheckout
+                  stripeKey="pk_test_51LJ0bKHO9kGri03OalRFlToYllIFut2WG5k2Cu9cLFgufJLwdAxQIUbDJor9glMQxyUcfolXmlLPIbqTpcDhSckY00G3PygrSE"
+                  token={handleToken}
+                  name={"Checkout your items!"}
+                  amount={totalAfterTax * 100}
+                  id="checkout"
+                  //onClick= {stripeHandler}
+                />
+              </div>
+            </div>
+          </section>
+
+          <div className="cart-items">
+            <h2 style={{ textAlign: "center" }}>Items In Cart</h2>
+            <section className="cart-flex">
               {cart_items &&
                 cart_items.map((product) => (
                   <>
-                    <p>{currentCartCount} Items </p>
-                    <p>${total}</p>
+                    <Card name={product.productName} price={product.price} />
+                    <span role="img" aria-label="trash">
+                      🗑️
+                    </span>
                   </>
                 ))}
+<<<<<<< HEAD
             </div>
             <div className="cart-flex">
               <p>Sales Tax: </p>
@@ -84,25 +122,15 @@ function FillCartDisplay(props) {
               amount={totalAfterTax * 100}
               id="checkout"
             />
+=======
+            </section>
+>>>>>>> d02b7b8 (Added Admin Pages and Update CSS Styles)
           </div>
         </div>
-      </section>
-
-      <div className="cart-items">
-        <h2 style={{ textAlign: "center" }}>Items In Cart</h2>
-        <section className="cart-flex">
-          {cart_items &&
-            cart_items.map((product) => (
-              <>
-                <Card name={product.productName} price={product.price} />
-                <span role="img" aria-label="trash">
-                  🗑️
-                </span>
-              </>
-            ))}
-        </section>
-      </div>
-    </div>
+      ) : (
+        <EmptyCartDisplay />
+      )}
+    </>
   );
 }
 

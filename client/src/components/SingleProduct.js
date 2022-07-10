@@ -17,11 +17,21 @@ const Error = () => {
 
 const ProductPage = (product) => {
   return (
-    <div className="container">
-      <h1>Product Page</h1>
-      <h2>{product.name}</h2>
-      <h2>{product.price}</h2>
-      <img src={`${product.image}`} alt="Hello" />
+    <div id="single-product" className="container flex">
+      <div className="product-image">
+        <img src={`${product.image}`} alt="Hello" />
+      </div>
+      <div className="text-container">
+        <h2>{product.name}</h2>
+        <div className="black-divider" />
+        <h3>${product.price}</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis
+          tellus id interdum velit laoreet id donec ultrices.
+        </p>
+        <button>Add to Cart</button>
+      </div>
     </div>
   );
 };
