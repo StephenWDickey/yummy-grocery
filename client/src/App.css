@@ -371,13 +371,12 @@ footer #logo {
 }
 
 #coolsign {
-  font-family: "Courier New", Courier, monospace;
   font-size: 50px;
   font-weight: 300;
 }
 #coolsign {
   display: inline-block;
-  color:#00A170;
+  color: #00a170;
   font-size: 30px;
   font-weight: bolder;
   position: relative;
@@ -392,30 +391,43 @@ footer #logo {
 /* } */
 /* Card */
 
-.card-flex {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 .card {
-  /* display: flex;
-  flex-wrap: wrap; */
-  padding: 10px;
   text-align: center;
-  border-style: solid;
   border-width: 1px;
+  box-shadow: -5px 15px 5px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 270px;
+  min-height: 200px;
+  margin: 2rem 2rem;
+  border-radius: 5px;
 }
 
-.card-img-top {
-  width: 100%;
-  min-width: 100px;
+.card button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: 0.1s ease-in;
 }
 
-.card-title {
+.card button:hover {
+  background-color: #a84d10;
+}
+
+.card-img {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+/* .card-title {
   padding: 20px;
   color: #fff;
 }
 
 .card-text {
   color: #fff;
-}
+} */

@@ -13,7 +13,7 @@ export default function Card(props) {
       "currentCartCount",
       parseInt(localStorage.getItem("currentCartCount")) + 1
     );
-    
+
     try {
       const { data } = await addProduct({
         variables: {
@@ -28,31 +28,26 @@ export default function Card(props) {
       console.error(e);
     }
   };
-  const cardStyle = {
-    width: "15rem",
-  };
+
+  console.log(props.image);
   return (
-    <div>
-      <div className="card" style={cardStyle}>
-        <img className="card-img-top" src={`${props.image}`} alt="Card cap" />
-        <div className="card-body">
-          <h5>Name: {props.name}</h5>
-          <p>Price: {props.price}</p>
-          <p className="card-quantity">Quantity: 1</p>
-          
-          <a
-            onClick={addToCart}
-            href="/"
-            className="btn btn-primary"
-            data-name={props.name}
-            data-price={props.price}
-          >
-            Add to Cart
-          </a>
-        </div>
+    <div className="card">
+      <div className="card-img">
+        <img style={{ width: "100%" }} src={`${props.image}`} alt="Card cap" />
+      </div>
+      <div className="card-body">
+        <h5>Name: {props.name}</h5>
+        <p>Price: {props.price}</p>
+
+        <a
+          onClick={addToCart}
+          href="/"
+          data-name={props.name}
+          data-price={props.price}
+        >
+          <button>Add to Cart</button>
+        </a>
       </div>
     </div>
   );
-
-
 }

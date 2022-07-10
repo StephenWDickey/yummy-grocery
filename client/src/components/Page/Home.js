@@ -24,7 +24,8 @@ const Display = () => {
               Shop Now
             </a> */}
           </div>
-          <div className="card-flex">
+
+          <div className="flex container">
             {products &&
               products.map((product) => (
                 <Card
